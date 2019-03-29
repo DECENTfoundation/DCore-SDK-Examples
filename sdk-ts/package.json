@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "class-transformer": "^0.2.0",
-    "dcorejs-sdk": "git+ssh://git@github.com/DECENTfoundation/DCoreJS-SDK.git"
+    "dcorejs-sdk": "https://github.com/DECENTfoundation/DCoreJS-SDK.git#2.1.1"
   }
 }

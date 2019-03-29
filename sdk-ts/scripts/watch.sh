@@ -1,1 +1,1 @@
-watchify -p [ tsify ] src/Transfer/transfer.ts -o dist/bundle.js --verbose
+watchify -p [ tsify ] src/example.ts -o dist/bundle.js --verbose

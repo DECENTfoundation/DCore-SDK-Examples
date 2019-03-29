@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DcoreJS SDK example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<form action="javascript:void(0)" class="form">
+    <div class="form__operation">
+        <h3>Transfer DCT</h3>
+        <div class="form__operation__input-row">
+            <label for="amount">Amount</label>
+            <input id="amount" type="number" title="amount" />
+        </div>
+        <div class="form__operation__input-row">
+            <label for="dct_receiver">To account</label>
+            <input id="dct_receiver" type="text" title="dct_receiver" />
+        </div>
+        <div class="form__operation__input-row">
+            <label for="memo">Memo</label>
+            <input id="memo" type="text" title="memo" />
+        </div>
+        <button id="transferButton" type="submit" title="transferButton">Transfer</button>
+    </div>
+    <div class="form__operation">
+        <h3>Send encrypted message</h3>
+        <div class="form__operation__input-row">
+            <label for="msg_receiver">To account</label>
+            <input id="msg_receiver" type="text" title="msg_receiver" />
+        </div>
+        <div class="form__operation__input-row">
+            <label for="message">Message</label>
+            <input id="message" type="text" title="message" />
+        </div>
+        <button id="messageButton" type="submit" title="transferButton">Send Message</button>
+    </div>
+    <div class="form__operation">
+        <h3>Get account history</h3>
+        <div class="form__operation__input-row">
+            <label for="accountId">Account ID</label>
+            <input id="accountId" type="text" title="accountId" />
+        </div>
+        <button id="getHistoryButton" type="submit" title="transferButton">Get history</button>
+    </div>
+</form>
+<h3>Response output</h3>
+<code id="output"></code>
+<script type="text/javascript" src="../dist/bundle.js"></script>
+</body>
+
+</html>

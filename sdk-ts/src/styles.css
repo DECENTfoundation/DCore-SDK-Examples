@@ -1,0 +1,44 @@
+body {
+    padding: 3rem;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-right: 15px;
+}
+
+button {
+    display: block;
+    margin: 15px;
+    align-self: center;
+}
+
+code {
+    display: block;
+    width: 90%;
+    padding: 15px;
+    border: 1px solid #cccccc;
+    overflow: scroll;
+}
+
+.form {
+    display: flex;
+}
+
+.form__operation {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.form__operation__input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 250px;
+}
