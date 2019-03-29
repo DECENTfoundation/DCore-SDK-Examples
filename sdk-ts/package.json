@@ -1,0 +1,23 @@
+{
+  "name": "example-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sh ./scripts/build.sh",
+    "clean": "sh ./scripts/clean.sh",
+    "watch": "sh ./scripts/watch.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "tsify": "^4.0.1",
+    "typescript": "^3.3.4000",
+    "watchify": "^3.11.1"
+  },
+  "dependencies": {
+    "class-transformer": "^0.2.0",
+    "dcorejs-sdk": "git+ssh://git@github.com/DECENTfoundation/DCoreJS-SDK.git"
+  }
+}
