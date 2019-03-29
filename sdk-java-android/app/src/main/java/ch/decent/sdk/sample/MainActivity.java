@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import ch.decent.sdk.DCoreApi;
+import ch.decent.sdk.DCoreConstants;
 import ch.decent.sdk.DCoreSdk;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.*;
@@ -25,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
         OkHttpClient client = TrustAllCerts.wrap(new OkHttpClient().newBuilder()).build();
         DCoreApi api = DCoreSdk.create(
                 client,
-                "wss://stagesocket.decentgo.com:8090",
-                "https://stagesocket.decentgo.com:8090",
+                "wss://testnet-api.dcore.io/",
+                "https://testnet-api.dcore.io/",
                 LoggerFactory.getLogger("SDK_SAMPLE"));
 
 //        create user credentials
         Credentials credentials = api.getAccountApi()
-                .createCredentials("u961279ec8b7ae7bd62f304f7c1c3d345", "5Jd7zdvxXYNdUfnEXt5XokrE3zwJSs734yQ36a1YaqioRTGGLtn")
+                .createCredentials("public-account-10", "5JMpT5C75rcAmuUB81mqVBXbmL1BKea4MYwVK6voMQLvigLKfrE")
                 .blockingGet();
 
 //        balance
@@ -41,17 +42,13 @@ public class MainActivity extends AppCompatActivity {
         Log.i("BALANCE", balance.getFirst().format(balance.getSecond().getAmount()));
 
 //        receiver
-        Account receiver = api.getAccountApi().getByName("u3a7b78084e7d3956442d5a4d439dad51")
+        Account receiver = api.getAccountApi().getByName("public-account-9")
                 .blockingGet();
         Log.i("RECIEVER ACCOUNT", receiver.toString());
 
 //        transfer
-        AssetAmount amount = balance.getFirst().amount(0.12345);
-        Memo memo = new Memo("hello memo", credentials, receiver);
-        TransferOperation operation = new TransferOperation(credentials.getAccount(), receiver.getId(), amount, memo);
-
-        TransactionConfirmation confirmation = api.getBroadcastApi()
-                .broadcastWithCallback(credentials.getKeyPair(), operation)
+        TransactionConfirmation confirmation = api.getAccountApi()
+                .transfer(credentials, receiver.getName(), DCoreConstants.DCT.amount(0.1), "hello memo")
                 .blockingGet();
 
         Log.i("TRANSACTION", confirmation.toString());

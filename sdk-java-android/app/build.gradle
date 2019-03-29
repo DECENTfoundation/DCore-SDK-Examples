@@ -24,7 +24,7 @@ configurations.all {
 }
 
 dependencies {
-    implementation('com.github.DECENTfoundation:DCoreKt-SDK:2.0.0') {
+    implementation('com.github.DECENTfoundation.DCoreKt-SDK:library:2.1.0') {
         exclude group: 'org.threeten', module: 'threetenbp'
     }
     implementation 'com.jakewharton.threetenabp:threetenabp:1.1.0'
