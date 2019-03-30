@@ -127,4 +127,7 @@ db/
 *.crt
 *.key
 *.ca-bundle
+
+.idea/
+
 package-lock.json
