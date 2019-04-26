@@ -32,6 +32,6 @@ function getHistory(account: string,) {
 
 function sendMsg(toAccount: string, memo: string) {
     output.innerHTML = "Loading ...";
-    api.messageApi.sendMessages(creds, [[ChainObject.parse(toAccount), memo]])
+    api.messageApi.send(creds, [[ChainObject.parse(toAccount), memo]])
         .subscribe((value: TransactionConfirmation) => output.innerHTML = serialize(value));
 }
