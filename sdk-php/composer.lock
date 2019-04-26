@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c988f303e37343921c1e26fe4acf5f58",
+    "content-hash": "27e3969e9239ab00c6f640894abcc033",
     "packages": [
         {
             "name": "bitcoin-php/bitcoin-ecdsa",
@@ -55,16 +55,16 @@
         },
         {
             "name": "decentfoundation/dcorephp-sdk",
-            "version": "v2.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DECENTfoundation/DCorePHP-SDK.git",
-                "reference": "8d91aed57b6f74c1284f08e54c4f563eb65a42a0"
+                "reference": "527473962942fcc1488eee928f2146bcbea61348"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DECENTfoundation/DCorePHP-SDK/zipball/8d91aed57b6f74c1284f08e54c4f563eb65a42a0",
-                "reference": "8d91aed57b6f74c1284f08e54c4f563eb65a42a0",
+                "url": "https://api.github.com/repos/DECENTfoundation/DCorePHP-SDK/zipball/527473962942fcc1488eee928f2146bcbea61348",
+                "reference": "527473962942fcc1488eee928f2146bcbea61348",
                 "shasum": ""
             },
             "require": {
@@ -115,7 +115,7 @@
                 }
             ],
             "description": "DCore PHP SDK library",
-            "time": "2019-03-27T10:48:31+00:00"
+            "time": "2019-04-16 07:39:22"
         },
         {
             "name": "fgrosse/phpasn1",
@@ -452,7 +452,7 @@
         },
         {
             "name": "symfony/inflector",
-            "version": "v4.2.5",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/inflector.git",
@@ -686,16 +686,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.2.5",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "1e6cbb41dadcaf29e0db034d6ad0d039a9df06e6"
+                "reference": "8cf39fb4ccff793340c258ee7760fd40bfe745fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/1e6cbb41dadcaf29e0db034d6ad0d039a9df06e6",
-                "reference": "1e6cbb41dadcaf29e0db034d6ad0d039a9df06e6",
+                "url": "https://api.github.com/repos/symfony/process/zipball/8cf39fb4ccff793340c258ee7760fd40bfe745fe",
+                "reference": "8cf39fb4ccff793340c258ee7760fd40bfe745fe",
                 "shasum": ""
             },
             "require": {
@@ -731,11 +731,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-03-10T20:07:02+00:00"
+            "time": "2019-04-10T16:20:36+00:00"
         },
         {
             "name": "symfony/property-access",
-            "version": "v3.4.24",
+            "version": "v3.4.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
@@ -803,16 +803,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v4.2.5",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "db5457ed88aacc1a040d4961ee52cddad3e5a4aa"
+                "reference": "ef70509b7cec68d4c202d08b6d9ab5e66eac3d03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/db5457ed88aacc1a040d4961ee52cddad3e5a4aa",
-                "reference": "db5457ed88aacc1a040d4961ee52cddad3e5a4aa",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/ef70509b7cec68d4c202d08b6d9ab5e66eac3d03",
+                "reference": "ef70509b7cec68d4c202d08b6d9ab5e66eac3d03",
                 "shasum": ""
             },
             "require": {
@@ -888,7 +888,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2019-03-30T15:58:42+00:00"
+            "time": "2019-04-17T15:01:37+00:00"
         },
         {
             "name": "textalk/websocket",
@@ -933,7 +933,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "decentfoundation/dcorephp-sdk": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

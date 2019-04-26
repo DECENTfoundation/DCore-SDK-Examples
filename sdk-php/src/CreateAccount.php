@@ -6,10 +6,9 @@ use DCorePHP\DCoreApi;
 use DCorePHP\Model\ChainObject;
 
 $dcoreApi = new DCoreApi(
-//    'https://testnet-api.dcore.io/',
-//    'wss://testnet-api.dcore.io'
-    'http://stagesocket.decentgo.com:8089/',
-    'wss://stagesocket.decentgo.com:8090'
+    'https://testnet-api.dcore.io/',
+    'wss://testnet-api.dcore.io',
+    true // @todo set to false in production environment
 );
 
 // name of our new account
@@ -17,11 +16,11 @@ $accountName = 'example-account-' . date('U');
 
 // WIF public key of our new account
 // generate and store your own key pair
-$publicKey = 'DCT6MA5TQQ6UbMyMaLPmPXE2Syh5G3ZVhv5SbFedqLPqdFChSeqTz';
+$publicKey = 'DCT6TjLhr8uESvgtxrbWuXNAN3vcqzBMw5eyEup3PMiD2gnVxeuTb';
 
 // WIF private key of an account which registers our new account
 // this key corresponds to already existing account
-$registrarPrivateKey = '5Jd7zdvxXYNdUfnEXt5XokrE3zwJSs734yQ36a1YaqioRTGGLtn';
+$registrarPrivateKey = '5Hxwqx6JJUBYWjQNt8DomTNJ6r6YK8wDJym4CMAH1zGctFyQtzt';
 
 // register new account
 $dcoreApi->getAccountApi()->registerAccount(
@@ -29,7 +28,7 @@ $dcoreApi->getAccountApi()->registerAccount(
     $publicKey,
     $publicKey,
     $publicKey,
-    new ChainObject('1.2.34'),
+    new ChainObject('1.2.27'),
     $registrarPrivateKey
 );
 
