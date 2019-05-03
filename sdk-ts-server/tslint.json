@@ -1,0 +1,22 @@
+{
+    "extends": [
+        "tslint:recommended",
+        "tslint-eslint-rules"
+    ],
+    "rules": {
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "max-line-length": [
+            true,
+            140
+        ],
+        "object-literal-sort-keys": false,
+        "object-curly-spacing": true,
+        "array-bracket-spacing": [
+            true,
+            "never"
+        ]
+    }
+}

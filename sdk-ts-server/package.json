@@ -1,0 +1,51 @@
+{
+    "name": "ts-example",
+    "version": "1.0.0",
+    "description": ".",
+    "main": "build/main/index.js",
+    "typings": "build/main/index.d.ts",
+    "module": "build/module/index.js",
+    "license": "MIT",
+    "keywords": [],
+    "scripts": {
+        "start": "npm run start:watch:ts",
+        "start:build": "sh ./scripts/start.sh",
+        "start:ts": "sh ./scripts/start_ts.sh",
+        "start:watch:ts": "sh ./scripts/start_watch_ts.sh",
+        "build": "sh ./scripts/build.sh",
+        "test": "sh ./scripts/test.sh",
+        "lint": "sh ./scripts/lint.sh",
+        "postinstall": "npm run build"
+    },
+    "engines": {
+        "node": ">=8.9"
+    },
+    "devDependencies": {
+        "@types/dotenv-safe": "^5.0.3",
+        "@types/express": "^4.16.1",
+        "@types/morgan": "^1.7.35",
+        "@types/node": "^11.13.0",
+        "@types/request": "^2.48.1",
+        "@types/request-promise": "^4.1.42",
+        "@types/ws": "^6.0.1",
+        "dotenv-safe": "^6.1.0",
+        "nodemon": "^1.18.10",
+        "tslint": "^5.11.0",
+        "tslint-eslint-rules": "^5.4.0",
+        "typescript": "^3.1.6"
+    },
+    "dependencies": {
+        "class-transformer": "^0.2.0",
+        "dcorejs-sdk": "^2.3.2",
+        "express": "^4.16.4",
+        "express-validator": "^5.3.1",
+        "log4js": "^4.1.0",
+        "morgan": "^1.9.1",
+        "reflect-metadata": "^0.1.13",
+        "request-promise": "^4.2.4",
+        "rxjs": "^6.5.1",
+        "ts-node": "^8.0.3",
+        "tsconfig-paths": "^3.8.0",
+        "ws": "^6.2.1"
+    }
+}

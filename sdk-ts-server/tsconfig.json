@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "es6"
+        ],
+        "target": "es6",
+        "module": "commonjs",
+        "declaration": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        /* Debugging Options */
+        "traceResolution": false /* Report module resolution log messages. */,
+        "listEmittedFiles": false /* Print names of generated files part of the compilation. */,
+        "listFiles": false /* Print names of files part of the compilation. */,
+        "pretty": true /* Stylize errors and messages using color and context. */,
+        "baseUrl": ".",
+        "paths": {
+            "*": ["./src/*"]
+        },
+        "outDir": "./dist",
+        "strict": true,
+        "alwaysStrict": true,
+    },
+    "exclude": [
+        "dist",
+        "tslint.json",
+        "**/tests/*",
+        "node_modules/**"
+    ],
+    "include": [
+        "src/**/*.ts"
+    ]
+}

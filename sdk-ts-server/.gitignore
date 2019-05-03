@@ -1,0 +1,14 @@
+node_modules
+build
+test
+dist/**
+.idea/*
+.vscode/*
+
+coverage
+.nyc_output
+*.log
+
+yarn.lock
+.env
+.DS_Store
