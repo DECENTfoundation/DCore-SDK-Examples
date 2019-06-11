@@ -1,14 +1,14 @@
 ### DCore JS SDK for ExpressJS example
 
-##### setup
+#### setup
 
 ```bash
 npm install
 npm start
 ```
 
-##### browser
+#### browser
 
-```
+```bash
 http://localhost:3000
 ```

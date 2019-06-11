@@ -12,7 +12,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.get('/accounts', async (req, res) => {
+app.get("/accounts", async (req, res) => {
     try {
         const result = await httpApi.accountApi.findAll(req.query.q || "").toPromise();
         res.json(result);
@@ -21,7 +21,7 @@ app.get('/accounts', async (req, res) => {
     }
 });
 
-app.get('/accounts/:name', async (req, res) => {
+app.get("/accounts/:name", async (req, res) => {
     try {
         const result = await httpApi.accountApi.get(req.params.name).toPromise();
         res.json(result);
@@ -30,7 +30,7 @@ app.get('/accounts/:name', async (req, res) => {
     }
 });
 
-app.post('/accounts', async (req, res) => {
+app.post("/accounts", async (req, res) => {
     try {
         const exist = await httpApi.accountApi.exist(req.body.name).toPromise();
         if (exist) {
