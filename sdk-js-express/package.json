@@ -1,0 +1,22 @@
+{
+  "name": "dcoreapp",
+  "version": "1.0.0",
+  "description": "DCore app example for account management.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mike@decent.ch",
+  "license": "ISC",
+  "dependencies": {
+    "dcorejs-sdk": "^2.5.4",
+    "express": "^4.17.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.2",
+    "ws": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
