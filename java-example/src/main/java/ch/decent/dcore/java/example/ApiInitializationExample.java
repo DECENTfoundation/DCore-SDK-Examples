@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ApiInitializationExample {
 
-    private static final Logger logger = LoggerFactory.getLogger("SDK_SAMPLE");
+    private static final Logger logger = LoggerFactory.getLogger("JavaExample");
     private static final String WEB_SOCKET_URL = "wss://testnet-api.dcore.io/";
     private static final String HTTP_URL = "https://testnet-api.dcore.io/";
 
