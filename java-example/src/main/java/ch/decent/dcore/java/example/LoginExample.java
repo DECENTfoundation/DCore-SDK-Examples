@@ -1,5 +1,6 @@
 package ch.decent.dcore.java.example;
 
+import ch.decent.sdk.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -11,10 +12,14 @@ public class LoginExample {
     private final static String PRIVATE_KEY = "5JMpT5C75rcAmuUB81mqVBXbmL1BKea4MYwVK6voMQLvigLKfrE";
 
     @Autowired
-    private ApiInitializationExample api;
+    private ApiInitializationExample apiInitializationExample;
 
     public Credentials login() {
-        return api.connect().getAccountApi()
+
+        final DCoreApi dcoreApi = apiInitializationExample.connect();
+
+        return dcoreApi
+            .getAccountApi()
             .createCredentials(ACCOUNT_NAME,PRIVATE_KEY)
             .blockingGet();
     }
