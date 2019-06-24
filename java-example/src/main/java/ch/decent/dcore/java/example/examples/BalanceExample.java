@@ -2,16 +2,13 @@ package ch.decent.dcore.java.example.examples;
 
 import ch.decent.sdk.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
+import ch.decent.sdk.model.Account;
 import ch.decent.sdk.model.AmountWithAsset;
-import ch.decent.sdk.model.OperationHistory;
-import io.reactivex.disposables.Disposable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
-public class BalanceAndHistoryExample {
+public class BalanceExample {
 
     private final static String ASSET_SYMBOL = "DCT";
 
@@ -20,7 +17,11 @@ public class BalanceAndHistoryExample {
     @Autowired
     private LoginExample loginExample;
 
-    public AmountWithAsset getBalanceBlocking() {
+    /**
+     * Example of fetching balance for my account.
+     * @return Balance for my account.
+     */
+    public AmountWithAsset getMyBalance() {
 
         final DCoreApi dcoreApi = apiInitializationExample.connect();
         final Credentials credentials = loginExample.login();
@@ -31,27 +32,22 @@ public class BalanceAndHistoryExample {
             .blockingGet();
     }
 
-    public List<OperationHistory> getHistoryBlocking() {
+    /**
+     * Example of fetching balance by some account.
+     * @return Balance for searched account.
+     */
+    public AmountWithAsset getBalanceByAccountName(String accountName) {
 
         final DCoreApi dcoreApi = apiInitializationExample.connect();
-        final Credentials credentials = loginExample.login();
 
-        return dcoreApi
-            .getHistoryApi()
-            .listOperations(credentials.getAccount())
-                .blockingGet();
-    }
-
-    public Disposable getBalanceAsync() {
-
-        final DCoreApi dcoreApi = apiInitializationExample.connect();
-        final Credentials credentials = loginExample.login();
+        final Account receiver = dcoreApi
+            .getAccountApi()
+            .getByName(accountName)
+            .blockingGet();
 
         return dcoreApi
             .getBalanceApi()
-            .getWithAsset(credentials.getAccount(), ASSET_SYMBOL)
-            .subscribe($ -> {
-                // execute your async callback
-            });
+            .getWithAsset(receiver.getId(), ASSET_SYMBOL)
+            .blockingGet();
     }
 }
