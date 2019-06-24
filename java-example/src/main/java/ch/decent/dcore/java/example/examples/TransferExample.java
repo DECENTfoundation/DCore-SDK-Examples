@@ -1,4 +1,4 @@
-package ch.decent.dcore.java.example;
+package ch.decent.dcore.java.example.examples;
 
 import ch.decent.sdk.DCoreApi;
 import ch.decent.sdk.DCoreConstants;
