@@ -1,4 +1,4 @@
-package ch.decent.dcore.java.example;
+package ch.decent.dcore.java.example.examples;
 
 import org.springframework.stereotype.Component;
 
@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 public class UIAExample {
 
     public void create() {
-
     }
 
     public void issue() {
