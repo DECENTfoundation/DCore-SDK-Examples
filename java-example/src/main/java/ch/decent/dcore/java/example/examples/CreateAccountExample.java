@@ -13,19 +13,19 @@ import java.math.BigInteger;
 @Component
 public class CreateAccountExample {
 
-    private static final BigInteger AMOUNT_OF_DCT = BigInteger.ONE;
+    private static final BigInteger AMOUNT_OF_DOT_REQUIRED_FOR_CREATION = BigInteger.valueOf(100000);
 
     @Autowired
-    private ApiInitializationExample apiInitializationExample;
+    private ConnectionExample connectionExample;
     @Autowired
     private LoginExample loginExample;
 
     public TransactionConfirmation createAccount(String newAccountName, String newPublicKey) {
 
-        final DCoreApi dcoreApi = apiInitializationExample.connect();
+        final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
         final Address decodedPublicKey = Address.decode(newPublicKey);
-        final AssetAmount initialFee = new AssetAmount(AMOUNT_OF_DCT);
+        final AssetAmount initialFee = new AssetAmount(AMOUNT_OF_DOT_REQUIRED_FOR_CREATION);
 
         return dcoreApi.getAccountApi().create(
             credentials,

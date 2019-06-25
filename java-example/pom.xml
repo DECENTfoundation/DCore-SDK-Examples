@@ -27,12 +27,16 @@
 	</repositories>
 
 	<dependencies>
+
+		<!-- SPRING BOOT DEPENDENCY -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
-		<!-- MUST HAVE TODO - mention in readme! -->
+		<!-- GENERIC KOTLIN DEPENDENCIES -->
+
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-reflect</artifactId>
@@ -42,11 +46,15 @@
 			<artifactId>kotlin-stdlib-jdk8</artifactId>
 		</dependency>
 
+		<!--	DCORE KOTLIN SDK 	-->
+
 		<dependency>
 			<groupId>com.github.DECENTfoundation</groupId>
 			<artifactId>DCoreKt-SDK</artifactId>
 			<version>2.2.3</version>
 		</dependency>
+
+		<!--	SPRING TEST DEPENDENCY	-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -57,11 +65,9 @@
 
 	<build>
 		<plugins>
-			<!--<plugin>-->
-				<!--<groupId>org.springframework.boot</groupId>-->
-				<!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-			<!--</plugin>-->
-			<!-- TODO - Mention in README!!! -->
+
+			<!--	GENERIC KOTLIN MAVEN PLUGIN		-->
+
 			<plugin>
 				<artifactId>kotlin-maven-plugin</artifactId>
 				<groupId>org.jetbrains.kotlin</groupId>
@@ -89,17 +95,18 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<!--	CONFIGURE COMPILE ORDER	-->
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.5.1</version>
 				<executions>
-					<!-- Replacing default-compile as it is treated specially by maven -->
 					<execution>
 						<id>default-compile</id>
 						<phase>none</phase>
 					</execution>
-					<!-- Replacing default-testCompile as it is treated specially by maven -->
 					<execution>
 						<id>default-testCompile</id>
 						<phase>none</phase>

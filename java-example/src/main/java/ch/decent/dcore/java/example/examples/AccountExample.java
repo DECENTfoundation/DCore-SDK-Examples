@@ -1,26 +1,28 @@
 package ch.decent.dcore.java.example.examples;
 
 import ch.decent.sdk.DCoreApi;
-import ch.decent.sdk.crypto.Credentials;
+import ch.decent.sdk.model.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LoginExample {
-
-    private final static String ACCOUNT_NAME = "public-account-10";
-    private final static String PRIVATE_KEY = "5JMpT5C75rcAmuUB81mqVBXbmL1BKea4MYwVK6voMQLvigLKfrE";
+public class AccountExample {
 
     @Autowired
     private ConnectionExample connectionExample;
 
-    public Credentials login() {
+    /**
+     * Example of getting any account by its name.
+     * @param accountName name of the account e.g. dw-account
+     * @return Account instance for given account name
+     */
+    public Account getAccountByName(String accountName) {
 
         final DCoreApi dcoreApi = connectionExample.connect();
 
         return dcoreApi
             .getAccountApi()
-            .createCredentials(ACCOUNT_NAME,PRIVATE_KEY)
+            .getByName(accountName)
             .blockingGet();
     }
 }

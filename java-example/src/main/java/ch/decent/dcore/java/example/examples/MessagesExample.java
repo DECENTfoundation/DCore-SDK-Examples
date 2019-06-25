@@ -17,18 +17,17 @@ import java.util.List;
 public class MessagesExample {
 
     @Autowired
-    private ApiInitializationExample apiInitializationExample;
+    private ConnectionExample connectionExample;
     @Autowired
     private LoginExample loginExample;
+    @Autowired
+    private AccountExample accountExample;
 
     public TransactionConfirmation sendTo(String accountName, String message) {
 
-        final DCoreApi dcoreApi = apiInitializationExample.connect();
+        final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
-        final Account receiver = dcoreApi
-            .getAccountApi()
-            .getByName(accountName)
-            .blockingGet();
+        final Account receiver = accountExample.getAccountByName(accountName);
 
         // Important - using kotlin.Pair instead of JavaFx Pair.
         final Pair<ChainObject, String> pairOfReceiverAndMessage = new Pair<>(receiver.getId(), message);
@@ -42,13 +41,25 @@ public class MessagesExample {
 
     public List<Message> readAllRecievedMessages() {
 
-        final DCoreApi dcoreApi = apiInitializationExample.connect();
+        final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
         final int numberOfMessages = Integer.MAX_VALUE;
 
         return dcoreApi
             .getMessagingApi()
             .getAllDecryptedForReceiver(credentials, numberOfMessages)
+            .blockingGet();
+    }
+
+    public List<Message> readAllSentMessages() {
+
+        final DCoreApi dcoreApi = connectionExample.connect();
+        final Credentials credentials = loginExample.login();
+        final int numberOfMessages = Integer.MAX_VALUE;
+
+        return dcoreApi
+            .getMessagingApi()
+            .getAllDecryptedForSender(credentials, numberOfMessages)
             .blockingGet();
     }
 }

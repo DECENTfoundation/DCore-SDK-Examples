@@ -13,18 +13,17 @@ import org.springframework.stereotype.Component;
 public class TransferExample {
 
     @Autowired
-    private ApiInitializationExample apiInitializationExample;
+    private ConnectionExample connectionExample;
     @Autowired
     private LoginExample loginExample;
+    @Autowired
+    private AccountExample accountExample;
 
     public TransactionConfirmation transferTo(String accountName, Double amount, String someMessage) {
 
-        final DCoreApi dcoreApi = apiInitializationExample.connect();
+        final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
-        final Account receiver = dcoreApi
-            .getAccountApi()
-            .getByName(accountName)
-            .blockingGet();
+        final Account receiver = accountExample.getAccountByName(accountName);
         final AssetAmount assetAmount = DCoreConstants.DCT.amount(amount);
 
         return dcoreApi.getAccountApi()
