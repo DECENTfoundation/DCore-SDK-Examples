@@ -13,9 +13,11 @@ public class BalanceExample {
     private final static String ASSET_SYMBOL = "DCT";
 
     @Autowired
-    private ApiInitializationExample apiInitializationExample;
+    private ConnectionExample connectionExample;
     @Autowired
     private LoginExample loginExample;
+    @Autowired
+    private AccountExample accountExample;
 
     /**
      * Example of fetching balance for my account.
@@ -23,7 +25,7 @@ public class BalanceExample {
      */
     public AmountWithAsset getMyBalance() {
 
-        final DCoreApi dcoreApi = apiInitializationExample.connect();
+        final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
 
         return dcoreApi
@@ -38,12 +40,8 @@ public class BalanceExample {
      */
     public AmountWithAsset getBalanceByAccountName(String accountName) {
 
-        final DCoreApi dcoreApi = apiInitializationExample.connect();
-
-        final Account receiver = dcoreApi
-            .getAccountApi()
-            .getByName(accountName)
-            .blockingGet();
+        final DCoreApi dcoreApi = connectionExample.connect();
+        final Account receiver = accountExample.getAccountByName(accountName);
 
         return dcoreApi
             .getBalanceApi()

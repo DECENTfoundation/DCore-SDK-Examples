@@ -2,8 +2,6 @@ package ch.decent.dcore.java.example.examples;
 
 import ch.decent.sdk.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
-import ch.decent.sdk.model.Account;
-import ch.decent.sdk.model.AmountWithAsset;
 import ch.decent.sdk.model.OperationHistory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,10 +12,10 @@ import java.util.List;
 @Component
 public class HistoryExample {
 
-    private final static int RESULTS_PER_PAGE = 20;
+    public final static int RESULTS_PER_PAGE = 100;
 
     @Autowired
-    private ApiInitializationExample apiInitializationExample;
+    private ConnectionExample connectionExample;
     @Autowired
     private LoginExample loginExample;
 
@@ -28,7 +26,7 @@ public class HistoryExample {
      */
     public List<OperationHistory> getHistoryPaginated(int pageNumber) {
 
-        final DCoreApi dcoreApi = apiInitializationExample.connect();
+        final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
         final int start = (pageNumber - 1) * RESULTS_PER_PAGE;
 
@@ -42,25 +40,22 @@ public class HistoryExample {
      * Example of fetching full history of my account ordered from most recent to oldest.
      * @return List of all operations for my account.
      */
-    public List<OperationHistory> getFullHistory() {
+    public List<OperationHistory> getFullHistory(int maxResults) {
 
-        final DCoreApi dcoreApi = apiInitializationExample.connect();
+        final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
         final List<OperationHistory> result = new ArrayList<>();
 
-        int lastStart = 0;
         while (true) {
 
             final List<OperationHistory> currentPage = dcoreApi
                 .getHistoryApi()
-                .listOperationsRelative(credentials.getAccount(), lastStart, RESULTS_PER_PAGE)
+                .listOperationsRelative(credentials.getAccount(), result.size(), RESULTS_PER_PAGE)
                 .blockingGet();
-
-            lastStart += RESULTS_PER_PAGE;
 
             result.addAll(currentPage);
 
-            if(currentPage.size() < RESULTS_PER_PAGE) {
+            if(currentPage.size() < RESULTS_PER_PAGE || result.size() >= maxResults) {
                 break;
             }
         }
