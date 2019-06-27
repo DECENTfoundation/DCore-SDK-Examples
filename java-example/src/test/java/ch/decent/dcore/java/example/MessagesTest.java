@@ -1,9 +1,8 @@
 package ch.decent.dcore.java.example;
 
-import ch.decent.dcore.java.example.examples.CreateAccountExample;
+import ch.decent.dcore.java.example.examples.AccountExample;
 import ch.decent.dcore.java.example.examples.MessagesExample;
 import ch.decent.sdk.model.Message;
-import ch.decent.sdk.model.OperationHistory;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +19,7 @@ import java.util.List;
 public class MessagesTest {
 
     @Autowired
-    private CreateAccountExample createAccountExample;
+    private AccountExample accountExample;
     @Autowired
     private MessagesExample messagesExample;
 
@@ -29,9 +28,8 @@ public class MessagesTest {
 
         final long timestamp = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
         final String newAccountName = "new-account-" + timestamp;
-        final String newPublicKey = "DCT6TjLhr8uESvgtxrbWuXNAN3vcqzBMw5eyEup3PMiD2gnVxeuTb";
 
-        createAccountExample.createAccount(newAccountName, newPublicKey);
+        accountExample.createAccount(newAccountName);
 
         messagesExample.sendTo(newAccountName, "Some message.");
 

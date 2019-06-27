@@ -1,34 +1,30 @@
 package ch.decent.dcore.java.example.examples;
 
-import ch.decent.sdk.DCoreApi;
-import ch.decent.sdk.crypto.Credentials;
-import ch.decent.sdk.model.ChainObject;
-import ch.decent.sdk.model.ContentKeys;
-import ch.decent.sdk.model.Seeder;
-import org.springframework.beans.factory.annotation.Autowired;
+import ch.decent.sdk.crypto.Address;
+import ch.decent.sdk.crypto.ECKeyPair;
+import ch.decent.sdk.crypto.ECKeyPairKt;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class GenerateKeysExample {
 
-    @Autowired
-    private ConnectionExample connectionExample;
-    @Autowired
-    private SeedersExample seedersExample;
+    /**
+     * Example of key pair (private/public) generation.
+     *
+     * IMPORTANT: This method of key generation should not be used on production system.
+     * Private key should be always generated on client side and never exposed.
+     * If you ever come to use case where you need to generate and store the private key
+     * in database to act on behalf of the user, please consider encrypting them by users
+     * password and salt.
+     *
+     * @return Generated public key
+     */
+    public Address generateKeys() {
+        final ECKeyPair generatedKeyPair = ECKeyPairKt.generatePrivateFromStringPhrase("testPassphrase");
 
-    public ContentKeys generateKeys() {
-        final DCoreApi dcoreApi = connectionExample.connect();
-        // TODO login as valid seeder
-        final List<ChainObject> seeders = seedersExample.listSeeders(10)
-            .stream()
-            .map(Seeder::getId).collect(Collectors.toList());
+        //NOTE: Be careful with generated private key and consider generation on client side.
+        final String privateKey = ECKeyPairKt.base58(generatedKeyPair);
 
-        return dcoreApi
-            .getContentApi()
-            .generateKeys(seeders)
-            .blockingGet();
+        return ECKeyPairKt.address(ECKeyPairKt.generatePrivateFromStringPhrase("test"));
     }
 }

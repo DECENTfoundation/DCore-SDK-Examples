@@ -21,6 +21,7 @@ public class HistoryExample {
 
     /**
      * Example of fetching history of my account by page numbers ordered from most recent to oldest.
+     *
      * @param pageNumber - pageNumber (Starting from 1)
      * @return List of transactions for given page
      */
@@ -38,6 +39,7 @@ public class HistoryExample {
 
     /**
      * Example of fetching full history of my account ordered from most recent to oldest.
+     *
      * @return List of all operations for my account.
      */
     public List<OperationHistory> getFullHistory(int maxResults) {
@@ -55,7 +57,7 @@ public class HistoryExample {
 
             result.addAll(currentPage);
 
-            if(currentPage.size() < RESULTS_PER_PAGE || result.size() >= maxResults) {
+            if (currentPage.size() < RESULTS_PER_PAGE || result.size() >= maxResults) {
                 break;
             }
         }

@@ -21,6 +21,7 @@ public class BalanceExample {
 
     /**
      * Example of fetching balance for my account.
+     *
      * @return Balance for my account.
      */
     public AmountWithAsset getMyBalance() {
@@ -36,6 +37,7 @@ public class BalanceExample {
 
     /**
      * Example of fetching balance by some account.
+     *
      * @return Balance for searched account.
      */
     public AmountWithAsset getBalanceByAccountName(String accountName) {
