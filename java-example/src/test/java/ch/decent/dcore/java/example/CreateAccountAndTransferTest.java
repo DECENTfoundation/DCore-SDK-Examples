@@ -1,10 +1,9 @@
 package ch.decent.dcore.java.example;
 
-import ch.decent.dcore.java.example.examples.*;
-import ch.decent.sdk.model.Account;
+import ch.decent.dcore.java.example.examples.AccountExample;
+import ch.decent.dcore.java.example.examples.BalanceExample;
+import ch.decent.dcore.java.example.examples.TransferExample;
 import ch.decent.sdk.model.AmountWithAsset;
-import ch.decent.sdk.model.OperationHistory;
-import ch.decent.sdk.model.TransactionConfirmation;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +14,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

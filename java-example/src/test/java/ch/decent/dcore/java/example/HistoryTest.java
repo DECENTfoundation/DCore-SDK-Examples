@@ -22,7 +22,7 @@ public class HistoryTest {
     public void getFullHistory() {
         final List<OperationHistory> result = historyExample.getFullHistory(1000);
 
-        Assert.assertEquals(1000,result.size());
+        Assert.assertEquals(1000, result.size());
     }
 
     @Test
