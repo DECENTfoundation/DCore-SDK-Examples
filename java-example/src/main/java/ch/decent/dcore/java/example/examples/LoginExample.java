@@ -14,13 +14,18 @@ public class LoginExample {
     @Autowired
     private ConnectionExample connectionExample;
 
+    /**
+     * Example of logging into the DECENT test network with private key.
+     *
+     * @return Credentials to use for other API calls.
+     */
     public Credentials login() {
 
         final DCoreApi dcoreApi = connectionExample.connect();
 
         return dcoreApi
             .getAccountApi()
-            .createCredentials(ACCOUNT_NAME,PRIVATE_KEY)
+            .createCredentials(ACCOUNT_NAME, PRIVATE_KEY)
             .blockingGet();
     }
 }

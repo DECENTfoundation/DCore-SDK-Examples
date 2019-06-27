@@ -13,13 +13,19 @@ public class SeedersExample {
     @Autowired
     private ConnectionExample connectionExample;
 
-     public List<Seeder> listSeeders(int numberOfSeeders) {
+    /**
+     * Example of listing seeders.
+     *
+     * @param numberOfSeeders Maximum number of seeders you would like to obtain.
+     * @return List of seeders ordered by rating.
+     */
+    public List<Seeder> listSeeders(int numberOfSeeders) {
 
-         final DCoreApi dcoreApi = connectionExample.connect();
+        final DCoreApi dcoreApi = connectionExample.connect();
 
-         return dcoreApi
-             .getSeedersApi()
-             .listByUpload(numberOfSeeders)
-             .blockingGet();
-     }
+        return dcoreApi
+            .getSeedersApi()
+            .listByRating(numberOfSeeders)
+            .blockingGet();
+    }
 }

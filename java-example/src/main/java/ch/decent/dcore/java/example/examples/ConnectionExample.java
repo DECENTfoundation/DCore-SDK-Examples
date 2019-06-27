@@ -17,12 +17,17 @@ public class ConnectionExample {
 
     private static DCoreApi holdConnection = null;
 
+    /**
+     * Example of creating and reusing the connecting to DECENT test network.
+     *
+     * @return Opened connection to network.
+     */
     public DCoreApi connect() {
 
-        final OkHttpClient.Builder clientBuilder =  new OkHttpClient().newBuilder();
+        final OkHttpClient.Builder clientBuilder = new OkHttpClient().newBuilder();
         final OkHttpClient httpClient = TrustAllCerts.wrap(clientBuilder).build();
 
-        if(holdConnection == null) {
+        if (holdConnection == null) {
             holdConnection = DCoreSdk.create(
                 httpClient,
                 WEB_SOCKET_URL,
@@ -33,5 +38,4 @@ public class ConnectionExample {
 
         return holdConnection;
     }
-
 }

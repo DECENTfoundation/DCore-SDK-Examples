@@ -23,6 +23,13 @@ public class MessagesExample {
     @Autowired
     private AccountExample accountExample;
 
+    /**
+     * Example of sending message to the given account name.
+     *
+     * @param accountName Valid account name.
+     * @param message     Message you would like to send.
+     * @return Confirmation of the transaction.
+     */
     public TransactionConfirmation sendTo(String accountName, String message) {
 
         final DCoreApi dcoreApi = connectionExample.connect();
@@ -39,6 +46,11 @@ public class MessagesExample {
             .blockingGet();
     }
 
+    /**
+     * Example of reading last messages that you received.
+     *
+     * @return List of received messages.
+     */
     public List<Message> readAllRecievedMessages() {
 
         final DCoreApi dcoreApi = connectionExample.connect();
@@ -51,6 +63,11 @@ public class MessagesExample {
             .blockingGet();
     }
 
+    /**
+     * Example of reading last messages that you sent.
+     *
+     * @return List of sent messages.
+     */
     public List<Message> readAllSentMessages() {
 
         final DCoreApi dcoreApi = connectionExample.connect();

@@ -19,6 +19,14 @@ public class TransferExample {
     @Autowired
     private AccountExample accountExample;
 
+    /**
+     * Example of transferring amount of DCTs to valid account name.
+     *
+     * @param accountName Valid account name.
+     * @param amount Amount of DCT you wish to transfer to the account.
+     * @param someMessage Payment reference.
+     * @return Transaction confirmation.
+     */
     public TransactionConfirmation transferTo(String accountName, Double amount, String someMessage) {
 
         final DCoreApi dcoreApi = connectionExample.connect();

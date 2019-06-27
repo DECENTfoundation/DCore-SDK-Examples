@@ -22,7 +22,7 @@ import java.util.List;
 public class CreateAccountAndTransferTest {
 
     @Autowired
-    private CreateAccountExample createAccountExample;
+    private AccountExample accountExample;
 
     @Autowired
     private BalanceExample balanceExample;
@@ -34,9 +34,8 @@ public class CreateAccountAndTransferTest {
     public void createAccountAndTransfer() {
         final long timestamp = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
         final String newAccountName = "new-account-" + timestamp;
-        final String newPublicKey = "DCT6TjLhr8uESvgtxrbWuXNAN3vcqzBMw5eyEup3PMiD2gnVxeuTb";
 
-        createAccountExample.createAccount(newAccountName, newPublicKey);
+        accountExample.createAccount(newAccountName);
 
         final AmountWithAsset balanceBeforeTransaction = balanceExample.getBalanceByAccountName(newAccountName);
         Assert.assertEquals(BigInteger.valueOf(0), balanceBeforeTransaction.getAmount().getAmount());
