@@ -10,7 +10,7 @@ public class GenerateKeysExample {
 
     /**
      * Example of key pair (private/public) generation.
-     *
+     * <p>
      * IMPORTANT: This method of key generation should not be used on production system.
      * Private key should be always generated on client side and never exposed.
      * If you ever come to use case where you need to generate and store the private key
@@ -25,6 +25,6 @@ public class GenerateKeysExample {
         //NOTE: Be careful with generated private key and consider generation on client side.
 //        final String privateKey = ECKeyPairKt.base58(generatedKeyPair);
 
-        return ECKeyPairKt.address(ECKeyPairKt.generatePrivateFromStringPhrase("test"));
+        return ECKeyPairKt.address(generatedKeyPair);
     }
 }
