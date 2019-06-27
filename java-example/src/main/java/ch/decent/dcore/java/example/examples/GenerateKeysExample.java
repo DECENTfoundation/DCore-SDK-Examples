@@ -23,7 +23,7 @@ public class GenerateKeysExample {
         final ECKeyPair generatedKeyPair = ECKeyPairKt.generatePrivateFromStringPhrase("testPassphrase");
 
         //NOTE: Be careful with generated private key and consider generation on client side.
-        final String privateKey = ECKeyPairKt.base58(generatedKeyPair);
+//        final String privateKey = ECKeyPairKt.base58(generatedKeyPair);
 
         return ECKeyPairKt.address(ECKeyPairKt.generatePrivateFromStringPhrase("test"));
     }
