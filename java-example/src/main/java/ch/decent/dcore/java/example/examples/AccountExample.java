@@ -5,16 +5,15 @@ import ch.decent.sdk.crypto.Address;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.Account;
 import ch.decent.sdk.model.AssetAmount;
+import ch.decent.sdk.model.Fee;
 import ch.decent.sdk.model.TransactionConfirmation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.math.BigInteger;
-
 @Component
 public class AccountExample {
 
-    private static final BigInteger AMOUNT_OF_DCT_REQUIRED_FOR_CREATION = BigInteger.valueOf(100000);
+    private static final Long AMOUNT_OF_DCT_REQUIRED_FOR_CREATION = 100000L;
 
     @Autowired
     private ConnectionExample connectionExample;
@@ -50,7 +49,8 @@ public class AccountExample {
         final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
         final Address newAccountPublicKey = generateKeys.generateKeys();
-        final AssetAmount initialFee = new AssetAmount(AMOUNT_OF_DCT_REQUIRED_FOR_CREATION);
+        final AssetAmount dctAssetAmount = new AssetAmount(AMOUNT_OF_DCT_REQUIRED_FOR_CREATION);
+        final Fee initialFee = new Fee(dctAssetAmount.getAssetId(), AMOUNT_OF_DCT_REQUIRED_FOR_CREATION);
 
         return dcoreApi.getAccountApi().create(
             credentials,

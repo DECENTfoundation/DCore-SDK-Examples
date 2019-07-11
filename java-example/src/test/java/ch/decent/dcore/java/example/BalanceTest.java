@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.math.BigInteger;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class BalanceTest {
@@ -23,7 +21,7 @@ public class BalanceTest {
         final AmountWithAsset result = balanceExample.getMyBalance();
 
         Assert.assertEquals("DCT", result.getAsset().getSymbol());
-        Assert.assertTrue(result.getAmount().getAmount().compareTo(BigInteger.ZERO) > 0);
+        Assert.assertTrue(result.getAmount().getAmount() > 0);
     }
 
     @Test
@@ -31,6 +29,6 @@ public class BalanceTest {
         final AmountWithAsset result = balanceExample.getBalanceByAccountName("public-account-10");
 
         Assert.assertEquals("DCT", result.getAsset().getSymbol());
-        Assert.assertTrue(result.getAmount().getAmount().compareTo(BigInteger.ZERO) > 0);
+        Assert.assertTrue(result.getAmount().getAmount() > 0);
     }
 }
