@@ -3,10 +3,9 @@ package ch.decent.dcore.java.example.examples;
 import ch.decent.sdk.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.Account;
-import ch.decent.sdk.model.ChainObject;
 import ch.decent.sdk.model.Message;
+import ch.decent.sdk.model.MessageRequest;
 import ch.decent.sdk.model.TransactionConfirmation;
-import kotlin.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -35,10 +34,8 @@ public class MessagesExample {
         final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
         final Account receiver = accountExample.getAccountByName(accountName);
-
-        // Important - using kotlin.Pair instead of JavaFx Pair.
-        final Pair<ChainObject, String> pairOfReceiverAndMessage = new Pair<>(receiver.getId(), message);
-        final List<Pair<ChainObject, String>> messagesToSend = Collections.singletonList(pairOfReceiverAndMessage);
+        final MessageRequest messageToSend = new MessageRequest(receiver.getId(), message);
+        final List<MessageRequest> messagesToSend = Collections.singletonList(messageToSend);
 
         return dcoreApi
             .getMessagingApi()

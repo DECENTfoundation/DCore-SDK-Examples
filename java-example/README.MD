@@ -15,7 +15,8 @@ Class name | Use cases
 *MessagesExample* | Sending message to given account name and reading the history of my sent or received messages.
 *SeedersExample* | List the content seeders by rating.
 *TransferExample* | Transferring some amount of DCT from my account to given account name.
-*UIAExample* | Example of creating and also issuing given amount of a new type of asset (UIA).
+*UIAExample* | Example of creating and also issuing given amount of a new type of asset (UIA) into circulation.
+*NFTExample* | Example of creating and also issuing given amount of a new type of asset (UIA) into circulation.
 
 ## Getting Started
 
@@ -27,13 +28,13 @@ The project is written in Java with the usage of Spring Boot Framework.
 
 ```
 Java 8
-Maven
+Maven 3
 ```
 
 #### Used DCoreKt version
 
 ```
-2.2.3
+2.3.0
 ```
 
 ### Project structure
@@ -81,3 +82,45 @@ Class name | Use cases
 2. You can find build in: ``` target/app.jar ```
 
 3. Start the app with simple command: ``` java -jar app.jar ```
+
+## Quick Start Your Own Java Project
+
+1. Setup your starting project (e.g.:[Spring BOOT](https://start.spring.io/))
+2. Import [DECENT DCoreKt SDK library](https://github.com/DECENTfoundation/DCoreKt-SDK)
+
+#### Maven
+
+* Add Repository:
+```
+
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+* Add Dependency:
+```
+<dependency>
+    <groupId>com.github.DECENTfoundation</groupId>
+    <artifactId>DCoreKt-SDK</artifactId>
+    <version>2.3.0</version>
+</dependency>
+```
+
+#### Gradle:
+
+* Add Repository:
+```
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+```
+* Add Dependency:
+```
+dependencies {
+        implementation 'com.github.DECENTfoundation:DCoreKt-SDK:2.3.0'
+}
+```

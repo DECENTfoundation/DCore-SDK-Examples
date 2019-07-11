@@ -36,11 +36,11 @@ public class CreateAccountAndTransferTest {
         accountExample.createAccount(newAccountName);
 
         final AmountWithAsset balanceBeforeTransaction = balanceExample.getBalanceByAccountName(newAccountName);
-        Assert.assertEquals(BigInteger.valueOf(0), balanceBeforeTransaction.getAmount().getAmount());
+        Assert.assertEquals(0, balanceBeforeTransaction.getAmount().getAmount());
 
         transferExample.transferTo(newAccountName, 0.00000001D, "You are rich now!");
 
         final AmountWithAsset balanceAfterTransaction = balanceExample.getBalanceByAccountName(newAccountName);
-        Assert.assertEquals(BigInteger.valueOf(1), balanceAfterTransaction.getAmount().getAmount());
+        Assert.assertEquals(1, balanceAfterTransaction.getAmount().getAmount());
     }
 }
