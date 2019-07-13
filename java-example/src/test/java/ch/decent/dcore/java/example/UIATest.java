@@ -18,7 +18,7 @@ public class UIATest {
     private UIAExample uiaExample;
 
     @Test
-    public void create() {
+    public void createAndIssueNewAssetIntoCirculation() {
 
         final String symbol = "EXAMPLE" + RandomStringUtils.randomAlphabetic(5).toUpperCase();
 
