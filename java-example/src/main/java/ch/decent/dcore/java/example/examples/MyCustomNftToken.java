@@ -18,6 +18,14 @@ public final class MyCustomNftToken implements NftModel {
         this.consumed = consumed;
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public boolean isConsumed() {
+        return consumed;
+    }
+
     public Map<String, Object> createUpdate() {
         return DefaultImpls.createUpdate(this);
     }
