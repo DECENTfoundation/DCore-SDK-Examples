@@ -19,7 +19,7 @@ public class UIAExample {
     /**
      * Example of creating new asset/currency in DCore block-chain.
      *
-     * @param symbol    Uppercase alphabetic string for your asset name.
+     * @param symbol Uppercase alphabetic string for your asset name.
      * @return Transaction confirmation.
      * @see <a href="https://en.bitcoin.it/wiki/Satoshi_(unit)">Number of decimal points in Satoshi number format</a>
      */
