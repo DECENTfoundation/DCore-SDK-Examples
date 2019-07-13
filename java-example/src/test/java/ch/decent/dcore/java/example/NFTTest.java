@@ -2,7 +2,6 @@ package ch.decent.dcore.java.example;
 
 import ch.decent.dcore.java.example.examples.AccountExample;
 import ch.decent.dcore.java.example.examples.NFTExample;
-import ch.decent.dcore.java.example.examples.UIAExample;
 import ch.decent.sdk.model.TransactionConfirmation;
 import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Assert;
