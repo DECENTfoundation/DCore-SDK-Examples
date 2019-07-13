@@ -16,7 +16,7 @@ Class name | Use cases
 *SeedersExample* | List the content seeders by rating.
 *TransferExample* | Transferring some amount of DCT from my account to given account name.
 *UIAExample* | Example of creating and also issuing given amount of a new type of asset (UIA) into circulation.
-*NFTExample* | Example of creating and also issuing given amount of a new type of asset (UIA) into circulation.
+*NFTExample* | Example of transferring non fungible tokens and also creating and issuing given amount of a new non fungible tokens.
 
 ## Getting Started
 
@@ -74,6 +74,8 @@ Class name | Use cases
 *CreateAccountAndTransferTest* | Testing the account creation and executing the transaction with balance validation on our test network.
 *HistoryTest* | Testing the pagination and full history on real account.
 *MessagesTest* | Testing the account creation with sending message to the new account.
+*UIATest* | Testing creation and issuing new asset into circulation.
+*NFTTest* | Testing transfer and also creation and issuing new non fungible tokens.
 
 ## Deployment
 

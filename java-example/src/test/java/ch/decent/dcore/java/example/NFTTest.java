@@ -1,5 +1,6 @@
 package ch.decent.dcore.java.example;
 
+import ch.decent.dcore.java.example.examples.AccountExample;
 import ch.decent.dcore.java.example.examples.NFTExample;
 import ch.decent.dcore.java.example.examples.UIAExample;
 import ch.decent.sdk.model.TransactionConfirmation;
@@ -11,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class NFTTest {
@@ -18,10 +22,23 @@ public class NFTTest {
     @Autowired
     private NFTExample nftExample;
 
+    @Autowired
+    private AccountExample accountExample;
+
     @Test
-    public void getMyBalance() {
+    public void createIssueAndTransferNFT() {
 
-        final TransactionConfirmation creationConfirmation = nftExample.create("APPLE");
+        final long timestamp = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
+        final String newAccountName = "new-account-" + timestamp;
 
+        accountExample.createAccount(newAccountName);
+
+        final String symbol = "EXAMPLE" + RandomStringUtils.randomAlphabetic(5).toUpperCase();
+
+        nftExample.create(symbol);
+        nftExample.issue(symbol, newAccountName);
+        TransactionConfirmation confirmation = nftExample.sendToken(newAccountName, symbol);
+
+        Assert.assertNotNull(confirmation);
     }
 }
