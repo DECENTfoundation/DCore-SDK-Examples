@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 public class ConnectionExample {
 
     private static final Logger logger = LoggerFactory.getLogger("JavaExample");
-    private static final String WEB_SOCKET_URL = "wss://testnet-api.dcore.io/";
-    private static final String HTTP_URL = "https://testnet-api.dcore.io/";
+    private static final String WEB_SOCKET_URL = "wss://testnet-socket.dcore.io/";
+    private static final String HTTP_URL = "https://testnet.dcore.io/";
 
     private static DCoreApi holdConnection = null;
 

@@ -68,6 +68,8 @@ http://localhost:8080/createAccount
 
 There are few integration tests that creat real calls on test-net and execute most of the examples in the project.
 
+All tests run against real [DCore Test network](https://docs.decent.ch/Testnets/)
+
 Class name | Use cases
 --- | --- |
 *BalanceTest* | Testing the balances on real accounts created on our test network.
