@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         OkHttpClient client = TrustAllCerts.wrap(new OkHttpClient().newBuilder()).build();
         DCoreApi api = DCoreSdk.create(
                 client,
-                "wss://testnet-api.dcore.io/",
-                "https://testnet-api.dcore.io/",
+                "wss://testnet-socket.dcore.io/",
+                "https://testnet.dcore.io/",
                 LoggerFactory.getLogger("SDK_SAMPLE"));
 
 //        create user credentials
