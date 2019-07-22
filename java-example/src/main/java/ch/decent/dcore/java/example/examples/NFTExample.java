@@ -2,15 +2,16 @@ package ch.decent.dcore.java.example.examples;
 
 import ch.decent.sdk.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
-import ch.decent.sdk.model.Account;
-import ch.decent.sdk.model.Nft;
-import ch.decent.sdk.model.TransactionConfirmation;
+import ch.decent.sdk.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class NFTExample {
 
+    private static final Long AMOUNT_OF_DCT_REQUIRED_FOR_NFT_ISSUE = 500000L;
     private static final Boolean TOKEN_IS_TRANSFERABLE = true;
     private static final Boolean MAX_SUPPLY_IS_FIXED = true;
     private static final Long MAX_NUMBER_OF_TOKENS = 1000L;
@@ -56,12 +57,17 @@ public class NFTExample {
         final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
         final Account receiver = accountExample.getAccountByName(accountName);
+        final AssetAmount dctAssetAmount = new AssetAmount(AMOUNT_OF_DCT_REQUIRED_FOR_NFT_ISSUE);
+        final Fee initialFee = new Fee(dctAssetAmount.getAssetId(), AMOUNT_OF_DCT_REQUIRED_FOR_NFT_ISSUE);
 
         return dcoreApi.getNftApi()
             .issue(
                 credentials,
                 symbol,
-                receiver.getId())
+                receiver.getId(),
+                new MyCustomNftToken(5, false),
+                null,
+                initialFee)
             .blockingGet();
     }
 
@@ -69,33 +75,32 @@ public class NFTExample {
      * Send one non fungible token to some account on DCore block-chain.
      *
      * @param receiverAccountName account name of token receiver.
-     * @param tokenSymbol String version of the NFT symbol.
      * @return Transaction confirmation.
      */
-    public TransactionConfirmation sendToken(String receiverAccountName, String tokenSymbol) {
+    public TransactionConfirmation sendToken(String receiverAccountName) {
         final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
         final Account receiver = accountExample.getAccountByName(receiverAccountName);
-        final Nft nft = getNftBySymbol(tokenSymbol);
+        final List<NftData<? extends NftModel>> result = getNftByAccount(credentials.getAccount());
 
         return dcoreApi.getNftApi()
             .transfer(
                 credentials,
                 receiver.getId(),
-                nft.getId())
+                result.get(0).getId())
             .blockingGet();
     }
 
     /**
-     * Search for the NFT object bt its symbol.
+     * Search for the NFT object by the owner.
      *
-     * @param symbol String version of the NFT symbol.
+     * @param account ChainObject account chain object.
      * @return Nft object.
      */
-    public Nft getNftBySymbol(String symbol) {
+    public List<NftData<? extends NftModel>> getNftByAccount(ChainObject account) {
         final DCoreApi dcoreApi = connectionExample.connect();
 
-        return dcoreApi.getNftApi().get(symbol).blockingGet();
+        return dcoreApi.getNftApi().getNftBalances(account).blockingGet();
     }
 }
 

@@ -52,7 +52,7 @@ public class MessagesExample {
 
         final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
-        final int numberOfMessages = Integer.MAX_VALUE;
+        final int numberOfMessages = 10;
 
         return dcoreApi
             .getMessagingApi()
@@ -69,7 +69,7 @@ public class MessagesExample {
 
         final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
-        final int numberOfMessages = Integer.MAX_VALUE;
+        final int numberOfMessages = 10;
 
         return dcoreApi
             .getMessagingApi()

@@ -10,8 +10,8 @@ import java.util.Map;
  */
 public final class MyCustomNftToken implements NftModel {
 
-    private final int size;
-    private boolean consumed;
+    public int size;
+    public boolean consumed;
 
     public MyCustomNftToken(int size, boolean consumed) {
         this.size = size;

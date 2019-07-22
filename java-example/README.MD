@@ -34,7 +34,7 @@ Maven 3
 #### Used DCoreKt version
 
 ```
-2.3.0
+2.3.1
 ```
 
 ### Project structure
@@ -109,7 +109,7 @@ Class name | Use cases
 <dependency>
     <groupId>com.github.DECENTfoundation</groupId>
     <artifactId>DCoreKt-SDK</artifactId>
-    <version>2.3.0</version>
+    <version>2.3.1</version>
 </dependency>
 ```
 
@@ -125,6 +125,6 @@ repositories {
 * Add Dependency:
 ```
 dependencies {
-        implementation 'com.github.DECENTfoundation:DCoreKt-SDK:2.3.0'
+        implementation 'com.github.DECENTfoundation:DCoreKt-SDK:2.3.1'
 }
 ```

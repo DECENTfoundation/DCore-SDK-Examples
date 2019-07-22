@@ -12,7 +12,7 @@ import java.util.List;
 @Component
 public class HistoryExample {
 
-    public final static int RESULTS_PER_PAGE = 100;
+    public final static int RESULTS_PER_PAGE = 10;
 
     @Autowired
     private ConnectionExample connectionExample;
