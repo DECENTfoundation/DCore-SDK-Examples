@@ -35,7 +35,7 @@ public class NFTTest {
         final String symbol = "EXAMPLE" + RandomStringUtils.randomAlphabetic(5).toUpperCase();
 
         nftExample.create(symbol);
-        nftExample.issue(symbol, newAccountName);
+        nftExample.issue(symbol);
         TransactionConfirmation confirmation = nftExample.sendToken(newAccountName);
 
         Assert.assertNotNull(confirmation);
