@@ -50,13 +50,11 @@ public class NFTExample {
      * Issue the new created NFT to some accountName.
      *
      * @param symbol String version of the NFT symbol.
-     * @param accountName Account name receiving the NFT data instance
      * @return Transaction confirmation.
      */
-    public TransactionConfirmation issue(String symbol, String accountName) {
+    public TransactionConfirmation issue(String symbol) {
         final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
-        final Account receiver = accountExample.getAccountByName(accountName);
         final AssetAmount dctAssetAmount = new AssetAmount(AMOUNT_OF_DCT_REQUIRED_FOR_NFT_ISSUE);
         final Fee initialFee = new Fee(dctAssetAmount.getAssetId(), AMOUNT_OF_DCT_REQUIRED_FOR_NFT_ISSUE);
 
@@ -64,7 +62,7 @@ public class NFTExample {
             .issue(
                 credentials,
                 symbol,
-                receiver.getId(),
+                credentials.getAccount(),
                 new MyCustomNftToken(5, false),
                 null,
                 initialFee)
