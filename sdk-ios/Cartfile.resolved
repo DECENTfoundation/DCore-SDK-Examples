@@ -1,0 +1,7 @@
+github "DECENTfoundation/DCoreSwift-SDK" "3.1.2"
+github "ReactiveX/RxSwift" "5.0.1"
+github "SwiftyJSON/SwiftyJSON" "5.0.0"
+github "attaswift/SipHash" "v1.2.2"
+github "daltoniam/Starscream" "3.1.0"
+github "fl3xman/BigInt" "2c74ff21b0c677986a295866438c6daeedb9d168"
+github "krzyzanowskim/CryptoSwift" "1.0.0"
