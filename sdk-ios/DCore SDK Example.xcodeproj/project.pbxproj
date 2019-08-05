@@ -16,6 +16,7 @@
 		076664BD22F8247E0053F882 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076664B422F8247E0053F882 /* SwiftyJSON.framework */; };
 		076664BE22F8247E0053F882 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076664B522F8247E0053F882 /* CryptoSwift.framework */; };
 		076664BF22F8247E0053F882 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076664B622F8247E0053F882 /* Starscream.framework */; };
+		076664C222F82CCA0053F882 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076664C122F82CCA0053F882 /* Config.swift */; };
 		076DCD3922F81B32007B3DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DCD3822F81B32007B3DAA /* AppDelegate.swift */; };
 		076DCD3B22F81B32007B3DAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DCD3A22F81B32007B3DAA /* ViewController.swift */; };
 		076DCD3E22F81B32007B3DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076DCD3C22F81B32007B3DAA /* Main.storyboard */; };
@@ -44,6 +45,8 @@
 		076664B422F8247E0053F882 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		076664B522F8247E0053F882 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		076664B622F8247E0053F882 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		076664C022F8294F0053F882 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		076664C122F82CCA0053F882 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		076DCD3522F81B32007B3DAA /* DCore SDK Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DCore SDK Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		076DCD3822F81B32007B3DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076DCD3A22F81B32007B3DAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 		076DCD3722F81B32007B3DAA /* DCore SDK Example */ = {
 			isa = PBXGroup;
 			children = (
+				076664C022F8294F0053F882 /* Config.xcconfig */,
+				076664C122F82CCA0053F882 /* Config.swift */,
 				076DCD3822F81B32007B3DAA /* AppDelegate.swift */,
 				076DCD3A22F81B32007B3DAA /* ViewController.swift */,
 				076DCD3C22F81B32007B3DAA /* Main.storyboard */,
@@ -281,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076664C222F82CCA0053F882 /* Config.swift in Sources */,
 				076DCD3B22F81B32007B3DAA /* ViewController.swift in Sources */,
 				076DCD3922F81B32007B3DAA /* AppDelegate.swift in Sources */,
 			);
@@ -326,6 +332,7 @@
 /* Begin XCBuildConfiguration section */
 		076DCD5022F81B34007B3DAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 076664C022F8294F0053F882 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -387,6 +394,7 @@
 		};
 		076DCD5122F81B34007B3DAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 076664C022F8294F0053F882 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

@@ -1,0 +1,4 @@
+DCORE_NODE_REST_URL = https:\/\/testnet.dcore.io\/
+DCORE_NODE_WSS_URL = wss:\/\/testnet-socket.dcore.io\/
+DCORE_ACCOUNT_ID = 1.2.27
+DCORE_PRIVATE_KEY = 5Hxwqx6JJUBYWjQNt8DomTNJ6r6YK8wDJym4CMAH1zGctFyQtzt

@@ -41,5 +41,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>DCORE_NODE_REST_URL</key>
+	<string>$(DCORE_NODE_REST_URL)</string>
+	<key>DCORE_NODE_WSS_URL</key>
+	<string>$(DCORE_NODE_WSS_URL)</string>
+	<key>DCORE_ACCOUNT_ID</key>
+	<string>$(DCORE_ACCOUNT_ID)</string>
+	<key>DCORE_PRIVATE_KEY</key>
+	<string>$(DCORE_PRIVATE_KEY)</string>
 </dict>
 </plist>
