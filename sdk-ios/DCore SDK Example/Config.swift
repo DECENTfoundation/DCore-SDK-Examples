@@ -14,4 +14,6 @@ extension DCore {
     static let testCredentials: Credentials = try! Credentials(
         try! testAccountId.asChainObject(), wif: testPrivateKey
     )
+    static let restApi: DCore.Api = DCore.Sdk.create(forRest: restUrl)
+    static let wssApi: DCore.Api = DCore.Sdk.create(forWss: wssUrl)
 }

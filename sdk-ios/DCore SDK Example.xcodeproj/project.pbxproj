@@ -17,6 +17,9 @@
 		076664BE22F8247E0053F882 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076664B522F8247E0053F882 /* CryptoSwift.framework */; };
 		076664BF22F8247E0053F882 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076664B622F8247E0053F882 /* Starscream.framework */; };
 		076664C222F82CCA0053F882 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076664C122F82CCA0053F882 /* Config.swift */; };
+		076664C422F85B160053F882 /* BalanceHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076664C322F85B160053F882 /* BalanceHistoryViewController.swift */; };
+		076664C822F85D2D0053F882 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076664C722F85D2D0053F882 /* HistoryCell.swift */; };
+		076664CB22F870980053F882 /* SupportsPaginationLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076664CA22F870980053F882 /* SupportsPaginationLoading.swift */; };
 		076DCD3922F81B32007B3DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DCD3822F81B32007B3DAA /* AppDelegate.swift */; };
 		076DCD3B22F81B32007B3DAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DCD3A22F81B32007B3DAA /* ViewController.swift */; };
 		076DCD3E22F81B32007B3DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076DCD3C22F81B32007B3DAA /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		076664B622F8247E0053F882 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		076664C022F8294F0053F882 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		076664C122F82CCA0053F882 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		076664C322F85B160053F882 /* BalanceHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceHistoryViewController.swift; sourceTree = "<group>"; };
+		076664C722F85D2D0053F882 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		076664CA22F870980053F882 /* SupportsPaginationLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportsPaginationLoading.swift; sourceTree = "<group>"; };
 		076DCD3522F81B32007B3DAA /* DCore SDK Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DCore SDK Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		076DCD3822F81B32007B3DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076DCD3A22F81B32007B3DAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +108,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		076664C522F85B700053F882 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				076664C622F85D180053F882 /* History */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		076664C622F85D180053F882 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				076664C322F85B160053F882 /* BalanceHistoryViewController.swift */,
+				076664C722F85D2D0053F882 /* HistoryCell.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		076664C922F8707A0053F882 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				076664CA22F870980053F882 /* SupportsPaginationLoading.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		076DCD2C22F81B32007B3DAA = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +163,8 @@
 				076DCD3F22F81B34007B3DAA /* Assets.xcassets */,
 				076DCD4122F81B34007B3DAA /* LaunchScreen.storyboard */,
 				076DCD4422F81B34007B3DAA /* Info.plist */,
+				076664C922F8707A0053F882 /* Common */,
+				076664C522F85B700053F882 /* Examples */,
 			);
 			path = "DCore SDK Example";
 			sourceTree = "<group>";
@@ -286,9 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076664C422F85B160053F882 /* BalanceHistoryViewController.swift in Sources */,
 				076664C222F82CCA0053F882 /* Config.swift in Sources */,
+				076664CB22F870980053F882 /* SupportsPaginationLoading.swift in Sources */,
 				076DCD3B22F81B32007B3DAA /* ViewController.swift in Sources */,
 				076DCD3922F81B32007B3DAA /* AppDelegate.swift in Sources */,
+				076664C822F85D2D0053F882 /* HistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
