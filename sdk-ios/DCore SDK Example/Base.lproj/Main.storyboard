@@ -41,6 +41,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGM-aZ-cQj">
                                                 <rect key="frame" x="0.0" y="60" width="414" height="30"/>
                                                 <state key="normal" title="Create account"/>
+                                                <connections>
+                                                    <segue destination="g5N-Qe-z8B" kind="show" id="Tpm-Xm-vhT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9O-12-DaB">
                                                 <rect key="frame" x="0.0" y="90" width="414" height="30"/>
@@ -78,6 +81,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Create Account-->
+        <scene sceneID="WD7-wt-DxN">
+            <objects>
+                <viewController title="Create Account" id="g5N-Qe-z8B" customClass="CreateAccountViewController" customModule="DCore_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YYj-P4-MBn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USz-Pj-Tbc">
+                                <rect key="frame" x="8" y="104" width="398" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="USz-Pj-Tbc" firstAttribute="leading" secondItem="exr-kZ-bvZ" secondAttribute="leading" constant="8" id="NmH-Fh-3c5"/>
+                            <constraint firstItem="USz-Pj-Tbc" firstAttribute="top" secondItem="exr-kZ-bvZ" secondAttribute="top" constant="16" id="cSH-Xh-vsj"/>
+                            <constraint firstItem="exr-kZ-bvZ" firstAttribute="trailing" secondItem="USz-Pj-Tbc" secondAttribute="trailing" constant="8" id="d63-mx-ctJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="exr-kZ-bvZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="accountName" destination="USz-Pj-Tbc" id="6Bl-hy-Iif"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1u-uo-gTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1906" y="66"/>
         </scene>
         <!--Make Transfer-->
         <scene sceneID="RoM-05-FmR">

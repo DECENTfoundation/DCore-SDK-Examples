@@ -30,6 +30,7 @@
 		07EDD74122F9B9480068A37B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74022F9B9480068A37B /* UIViewController+Extension.swift */; };
 		07EDD74322FAAF290068A37B /* Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74222FAAF290068A37B /* Rx+Extension.swift */; };
 		07EDD74522FAC4860068A37B /* CreateUIAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74422FAC4860068A37B /* CreateUIAViewController.swift */; };
+		07EDD74722FAE9E90068A37B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74622FAE9E90068A37B /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		07EDD74022F9B9480068A37B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		07EDD74222FAAF290068A37B /* Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Extension.swift"; sourceTree = "<group>"; };
 		07EDD74422FAC4860068A37B /* CreateUIAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUIAViewController.swift; sourceTree = "<group>"; };
+		07EDD74622FAE9E90068A37B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				076664C622F85D180053F882 /* History */,
 				07EDD73E22F9A1910068A37B /* TransferViewController.swift */,
 				07EDD74422FAC4860068A37B /* CreateUIAViewController.swift */,
+				07EDD74622FAE9E90068A37B /* CreateAccountViewController.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				07EDD74322FAAF290068A37B /* Rx+Extension.swift in Sources */,
 				076664C422F85B160053F882 /* BalanceHistoryViewController.swift in Sources */,
 				07EDD73F22F9A1910068A37B /* TransferViewController.swift in Sources */,
+				07EDD74722FAE9E90068A37B /* CreateAccountViewController.swift in Sources */,
 				076664C222F82CCA0053F882 /* Config.swift in Sources */,
 				076664CB22F870980053F882 /* SupportsPaginationLoading.swift in Sources */,
 				07EDD74122F9B9480068A37B /* UIViewController+Extension.swift in Sources */,
