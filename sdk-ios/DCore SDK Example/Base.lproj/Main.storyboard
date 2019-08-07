@@ -42,6 +42,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9O-12-DaB">
                                                 <rect key="frame" x="0.0" y="90" width="414" height="30"/>
                                                 <state key="normal" title="Make transfer"/>
+                                                <connections>
+                                                    <segue destination="kF9-C7-YfS" kind="show" id="Weo-Wh-07Y"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSu-xu-1Bj">
                                                 <rect key="frame" x="0.0" y="120" width="414" height="30"/>
@@ -72,6 +75,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Make Transfer-->
+        <scene sceneID="RoM-05-FmR">
+            <objects>
+                <viewController title="Make Transfer" id="kF9-C7-YfS" customClass="TransferViewController" customModule="DCore_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eTE-D4-Xeu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="i6C-oE-Nwi">
+                                <rect key="frame" x="8" y="104" width="398" height="122"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rrd-cL-Rak">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount in DCT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KNK-Tv-z2B">
+                                        <rect key="frame" x="0.0" y="46" width="398" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Memo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2T-d0-Wnh">
+                                        <rect key="frame" x="0.0" y="92" width="398" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i6C-oE-Nwi" firstAttribute="leading" secondItem="5Kx-1P-s0E" secondAttribute="leading" constant="8" id="04B-FV-tzy"/>
+                            <constraint firstItem="i6C-oE-Nwi" firstAttribute="top" secondItem="5Kx-1P-s0E" secondAttribute="top" constant="16" id="06k-24-tc1"/>
+                            <constraint firstItem="5Kx-1P-s0E" firstAttribute="trailing" secondItem="i6C-oE-Nwi" secondAttribute="trailing" constant="8" id="7xU-t0-11G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5Kx-1P-s0E"/>
+                    </view>
+                    <connections>
+                        <outlet property="amount" destination="KNK-Tv-z2B" id="tdm-6s-Ogd"/>
+                        <outlet property="memo" destination="v2T-d0-Wnh" id="NQZ-Oo-b5S"/>
+                        <outlet property="toAddress" destination="Rrd-cL-Rak" id="CPu-Xj-6Cd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbA-uD-LhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1219" y="715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Grz-Yq-NZy">
