@@ -34,6 +34,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9N-5j-1GR">
                                                 <rect key="frame" x="0.0" y="30" width="414" height="30"/>
                                                 <state key="normal" title="Create UIA"/>
+                                                <connections>
+                                                    <segue destination="EBA-Cf-lB0" kind="show" id="FMn-cO-Ul5"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGM-aZ-cQj">
                                                 <rect key="frame" x="0.0" y="60" width="414" height="30"/>
@@ -208,6 +211,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCl-pS-D7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="908.69565217391312" y="-682.36607142857144"/>
+        </scene>
+        <!--Create UIA-->
+        <scene sceneID="p7r-1x-hY9">
+            <objects>
+                <viewController title="Create UIA" id="EBA-Cf-lB0" customClass="CreateUIAViewController" customModule="DCore_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bwN-HM-t8r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Issued Asset Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWK-Rt-k0f">
+                                <rect key="frame" x="8" y="104" width="398" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OrV-TN-FJp" firstAttribute="trailing" secondItem="ZWK-Rt-k0f" secondAttribute="trailing" constant="8" id="Zf4-qH-Re2"/>
+                            <constraint firstItem="ZWK-Rt-k0f" firstAttribute="leading" secondItem="OrV-TN-FJp" secondAttribute="leading" constant="8" id="kOv-aP-dzC"/>
+                            <constraint firstItem="ZWK-Rt-k0f" firstAttribute="top" secondItem="OrV-TN-FJp" secondAttribute="top" constant="16" id="qCh-oP-Xa7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OrV-TN-FJp"/>
+                    </view>
+                    <connections>
+                        <outlet property="uiaName" destination="ZWK-Rt-k0f" id="v0A-VJ-hJv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNs-O6-ovV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1906" y="-593"/>
         </scene>
     </scenes>
 </document>

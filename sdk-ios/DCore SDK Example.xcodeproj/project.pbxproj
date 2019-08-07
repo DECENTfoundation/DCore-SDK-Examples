@@ -29,6 +29,7 @@
 		07EDD73F22F9A1910068A37B /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD73E22F9A1910068A37B /* TransferViewController.swift */; };
 		07EDD74122F9B9480068A37B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74022F9B9480068A37B /* UIViewController+Extension.swift */; };
 		07EDD74322FAAF290068A37B /* Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74222FAAF290068A37B /* Rx+Extension.swift */; };
+		07EDD74522FAC4860068A37B /* CreateUIAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74422FAC4860068A37B /* CreateUIAViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		07EDD73E22F9A1910068A37B /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		07EDD74022F9B9480068A37B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		07EDD74222FAAF290068A37B /* Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Extension.swift"; sourceTree = "<group>"; };
+		07EDD74422FAC4860068A37B /* CreateUIAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUIAViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				076664C622F85D180053F882 /* History */,
 				07EDD73E22F9A1910068A37B /* TransferViewController.swift */,
+				07EDD74422FAC4860068A37B /* CreateUIAViewController.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				07EDD74122F9B9480068A37B /* UIViewController+Extension.swift in Sources */,
 				076DCD3B22F81B32007B3DAA /* ViewController.swift in Sources */,
 				076DCD3922F81B32007B3DAA /* AppDelegate.swift in Sources */,
+				07EDD74522FAC4860068A37B /* CreateUIAViewController.swift in Sources */,
 				076664C822F85D2D0053F882 /* HistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
