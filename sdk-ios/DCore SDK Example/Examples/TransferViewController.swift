@@ -26,7 +26,7 @@ final class TransferViewController: UIViewController {
                 amount: AssetAmount(with: self.amount.text ?? ""),
                 message: self.memo.text,
                 encrypted: false
-            )
+            ).handleError(viewController: self)
         }.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] _ in
             transferButton.isEnabled = true
             self?.toAddress.text = nil

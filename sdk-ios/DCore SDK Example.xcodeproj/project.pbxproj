@@ -28,6 +28,7 @@
 		076DCD4E22F81B34007B3DAA /* DCore_SDK_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DCD4D22F81B34007B3DAA /* DCore_SDK_ExampleTests.swift */; };
 		07EDD73F22F9A1910068A37B /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD73E22F9A1910068A37B /* TransferViewController.swift */; };
 		07EDD74122F9B9480068A37B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74022F9B9480068A37B /* UIViewController+Extension.swift */; };
+		07EDD74322FAAF290068A37B /* Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74222FAAF290068A37B /* Rx+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		076DCD4F22F81B34007B3DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07EDD73E22F9A1910068A37B /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		07EDD74022F9B9480068A37B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		07EDD74222FAAF290068A37B /* Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		076664C922F8707A0053F882 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				07EDD74222FAAF290068A37B /* Rx+Extension.swift */,
 				076664CA22F870980053F882 /* SupportsPaginationLoading.swift */,
 				07EDD74022F9B9480068A37B /* UIViewController+Extension.swift */,
 			);
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07EDD74322FAAF290068A37B /* Rx+Extension.swift in Sources */,
 				076664C422F85B160053F882 /* BalanceHistoryViewController.swift in Sources */,
 				07EDD73F22F9A1910068A37B /* TransferViewController.swift in Sources */,
 				076664C222F82CCA0053F882 /* Config.swift in Sources */,

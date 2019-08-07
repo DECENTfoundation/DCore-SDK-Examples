@@ -35,7 +35,7 @@ final class BalanceHistoryViewController: UITableViewController {
             DCore.wssApi.history.findAll(
                 byAccountId: DCore.testAccountId,
                 pagination: .page(bounds: 0..<(0), offset: UInt64(offset + limit), limit: UInt64(limit))
-            )
+            ).handleError(viewController: self)
         }.observeOn(MainScheduler.instance).scan([BalanceChange]()) { output, items in
             output + items
         }.do(onNext: { [weak self] _ in
