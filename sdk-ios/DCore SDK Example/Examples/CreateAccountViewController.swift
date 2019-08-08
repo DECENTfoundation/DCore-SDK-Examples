@@ -15,6 +15,17 @@ final class CreateAccountViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = createButton
         
         createButton.rx.tap
+            .do(onNext: {
+                assertionFailure("""
+                    Creating account from iOS app is highly discouraged. Removing this line will make this example work,
+                    but you probably don't want to use this code anyway. If you need to be able to create DCore
+                    accounts, consider writing a backend service instead. To create an account, you need a private key
+                    of existing account, that will pay transaction fee of the create account operation. It's highly
+                    discouraged to include private key of any account into an iOS app binary, or to send private key
+                    over network. An attacker might get access to the private key and then he will gain full access
+                    to that account.
+                """)
+            })
             .do(onNext: { createButton.isEnabled = false })
             .map { BrainKey.generate() }
             .flatMapLatest { [weak self] brainKey -> Single<BrainKey> in
