@@ -10,7 +10,7 @@ use DCorePHP\Model\ChainObject;
 $dcoreApi = new DCoreApi(
     'https://testnet.dcore.io/',
     'wss://testnet-socket.dcore.io',
-    true // @todo set to false in production environment
+    true // Set to false in production environment
 );
 
 $accountId = new ChainObject('1.2.27');
