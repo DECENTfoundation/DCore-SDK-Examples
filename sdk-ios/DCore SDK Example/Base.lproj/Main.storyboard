@@ -197,6 +197,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9e-4L-2wI">
                                                 <rect key="frame" x="0.0" y="60" width="414" height="30"/>
                                                 <state key="normal" title="Send new message"/>
+                                                <connections>
+                                                    <segue destination="DE4-Qs-FyQ" kind="show" id="pUz-RF-aCC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -402,6 +405,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNs-O6-ovV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1906" y="-706"/>
+        </scene>
+        <!--Send message-->
+        <scene sceneID="aew-Ff-dpO">
+            <objects>
+                <viewController title="Send message" id="DE4-Qs-FyQ" customClass="MessageSendViewController" customModule="DCore_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zxd-gu-rqx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Receiver" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BBo-md-Lcv">
+                                <rect key="frame" x="8" y="104" width="398" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fBp-5J-KCi">
+                                <rect key="frame" x="8" y="150" width="398" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encrypted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIO-uN-L6A">
+                                <rect key="frame" x="8" y="201" width="325" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FEV-Ux-dx6">
+                                <rect key="frame" x="349" y="196" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BBo-md-Lcv" firstAttribute="top" secondItem="Eed-ht-oQC" secondAttribute="top" constant="16" id="9ae-Oo-ynb"/>
+                            <constraint firstItem="fBp-5J-KCi" firstAttribute="top" secondItem="BBo-md-Lcv" secondAttribute="bottom" constant="16" id="K5J-zg-tm2"/>
+                            <constraint firstItem="FEV-Ux-dx6" firstAttribute="top" secondItem="fBp-5J-KCi" secondAttribute="bottom" constant="16" id="N9n-oW-i8g"/>
+                            <constraint firstItem="jIO-uN-L6A" firstAttribute="centerY" secondItem="FEV-Ux-dx6" secondAttribute="centerY" id="XTg-Hb-bBx"/>
+                            <constraint firstItem="jIO-uN-L6A" firstAttribute="leading" secondItem="Eed-ht-oQC" secondAttribute="leading" constant="8" id="afv-DN-Ljx"/>
+                            <constraint firstItem="FEV-Ux-dx6" firstAttribute="leading" secondItem="jIO-uN-L6A" secondAttribute="trailing" constant="16" id="bJM-KD-Q9L"/>
+                            <constraint firstItem="Eed-ht-oQC" firstAttribute="trailing" secondItem="FEV-Ux-dx6" secondAttribute="trailing" constant="16" id="gfY-dJ-hbz"/>
+                            <constraint firstItem="fBp-5J-KCi" firstAttribute="leading" secondItem="Eed-ht-oQC" secondAttribute="leading" constant="8" id="iXn-QC-gdi"/>
+                            <constraint firstItem="Eed-ht-oQC" firstAttribute="trailing" secondItem="fBp-5J-KCi" secondAttribute="trailing" constant="8" id="k0C-VE-2gV"/>
+                            <constraint firstItem="Eed-ht-oQC" firstAttribute="trailing" secondItem="BBo-md-Lcv" secondAttribute="trailing" constant="8" id="oRY-Jc-CWm"/>
+                            <constraint firstItem="BBo-md-Lcv" firstAttribute="leading" secondItem="Eed-ht-oQC" secondAttribute="leading" constant="8" id="pFF-5C-94D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Eed-ht-oQC"/>
+                    </view>
+                    <connections>
+                        <outlet property="encryptedSwitch" destination="FEV-Ux-dx6" id="03H-jX-Pxo"/>
+                        <outlet property="message" destination="fBp-5J-KCi" id="qWJ-Bs-62a"/>
+                        <outlet property="receiver" destination="BBo-md-Lcv" id="7Pn-XP-xQS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6KU-MI-CJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1906" y="1669"/>
         </scene>
         <!--Messaging-->
         <scene sceneID="pVV-ej-KWZ">

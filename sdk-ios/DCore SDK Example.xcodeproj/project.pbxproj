@@ -26,6 +26,7 @@
 		076DCD4022F81B34007B3DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076DCD3F22F81B34007B3DAA /* Assets.xcassets */; };
 		076DCD4322F81B34007B3DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076DCD4122F81B34007B3DAA /* LaunchScreen.storyboard */; };
 		076DCD4E22F81B34007B3DAA /* DCore_SDK_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DCD4D22F81B34007B3DAA /* DCore_SDK_ExampleTests.swift */; };
+		07C6946022FC475A00B6C88D /* MessageSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6945F22FC475A00B6C88D /* MessageSendViewController.swift */; };
 		07EDD73F22F9A1910068A37B /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD73E22F9A1910068A37B /* TransferViewController.swift */; };
 		07EDD74122F9B9480068A37B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74022F9B9480068A37B /* UIViewController+Extension.swift */; };
 		07EDD74322FAAF290068A37B /* Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EDD74222FAAF290068A37B /* Rx+Extension.swift */; };
@@ -70,6 +71,7 @@
 		076DCD4922F81B34007B3DAA /* DCore SDK ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DCore SDK ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		076DCD4D22F81B34007B3DAA /* DCore_SDK_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCore_SDK_ExampleTests.swift; sourceTree = "<group>"; };
 		076DCD4F22F81B34007B3DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07C6945F22FC475A00B6C88D /* MessageSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSendViewController.swift; sourceTree = "<group>"; };
 		07EDD73E22F9A1910068A37B /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		07EDD74022F9B9480068A37B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		07EDD74222FAAF290068A37B /* Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Extension.swift"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				07EDD74922FBFF980068A37B /* MessagesListViewController.swift */,
 				07EDD74B22FC00610068A37B /* MessageCell.swift */,
+				07C6945F22FC475A00B6C88D /* MessageSendViewController.swift */,
 			);
 			path = Messaging;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				07EDD74722FAE9E90068A37B /* CreateAccountViewController.swift in Sources */,
 				07EDD74C22FC00610068A37B /* MessageCell.swift in Sources */,
 				076664C222F82CCA0053F882 /* Config.swift in Sources */,
+				07C6946022FC475A00B6C88D /* MessageSendViewController.swift in Sources */,
 				076664CB22F870980053F882 /* SupportsPaginationLoading.swift in Sources */,
 				07EDD74122F9B9480068A37B /* UIViewController+Extension.swift in Sources */,
 				076DCD3B22F81B32007B3DAA /* ViewController.swift in Sources */,
