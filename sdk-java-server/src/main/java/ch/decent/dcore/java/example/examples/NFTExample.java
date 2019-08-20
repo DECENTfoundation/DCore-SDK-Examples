@@ -1,6 +1,6 @@
 package ch.decent.dcore.java.example.examples;
 
-import ch.decent.sdk.DCoreApi;
+import ch.decent.sdk.api.rx.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,7 +79,7 @@ public class NFTExample {
         final DCoreApi dcoreApi = connectionExample.connect();
         final Credentials credentials = loginExample.login();
         final Account receiver = accountExample.getAccountByName(receiverAccountName);
-        final List<NftData<? extends NftModel>> result = getNftByAccount(credentials.getAccount());
+        final List<NftData<NftModel>> result = getNftByAccount(credentials.getAccount());
 
         return dcoreApi.getNftApi()
             .transfer(
@@ -95,7 +95,7 @@ public class NFTExample {
      * @param account ChainObject account chain object.
      * @return Nft object.
      */
-    public List<NftData<? extends NftModel>> getNftByAccount(ChainObject account) {
+    public List<NftData<NftModel>> getNftByAccount(AccountObjectId account) {
         final DCoreApi dcoreApi = connectionExample.connect();
 
         return dcoreApi.getNftApi().getNftBalances(account).blockingGet();

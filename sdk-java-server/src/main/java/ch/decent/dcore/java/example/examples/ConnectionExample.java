@@ -1,7 +1,7 @@
 package ch.decent.dcore.java.example.examples;
 
-import ch.decent.sdk.DCoreApi;
 import ch.decent.sdk.DCoreSdk;
+import ch.decent.sdk.api.rx.DCoreApi;
 import ch.decent.sdk.net.TrustAllCerts;
 import okhttp3.OkHttpClient;
 import org.slf4j.Logger;
@@ -28,7 +28,7 @@ public class ConnectionExample {
         final OkHttpClient httpClient = TrustAllCerts.wrap(clientBuilder).build();
 
         if (holdConnection == null) {
-            holdConnection = DCoreSdk.create(
+            holdConnection = DCoreSdk.createApiRx(
                 httpClient,
                 WEB_SOCKET_URL,
                 HTTP_URL,

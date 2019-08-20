@@ -1,6 +1,6 @@
 package ch.decent.dcore.java.example.examples;
 
-import ch.decent.sdk.DCoreApi;
+import ch.decent.sdk.api.rx.DCoreApi;
 import ch.decent.sdk.crypto.Address;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.Account;
@@ -35,6 +35,7 @@ public class AccountExample {
         return dcoreApi
             .getAccountApi()
             .getByName(accountName)
+
             .blockingGet();
     }
 

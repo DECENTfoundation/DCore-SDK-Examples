@@ -1,6 +1,6 @@
 package ch.decent.dcore.java.example.examples;
 
-import ch.decent.sdk.DCoreApi;
+import ch.decent.sdk.api.rx.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.Account;
 import ch.decent.sdk.model.Message;
@@ -56,7 +56,7 @@ public class MessagesExample {
 
         return dcoreApi
             .getMessagingApi()
-            .getAllDecryptedForReceiver(credentials, numberOfMessages)
+            .findAllDecryptedForReceiver(credentials, numberOfMessages)
             .blockingGet();
     }
 
@@ -73,7 +73,7 @@ public class MessagesExample {
 
         return dcoreApi
             .getMessagingApi()
-            .getAllDecryptedForSender(credentials, numberOfMessages)
+            .findAllDecryptedForSender(credentials, numberOfMessages)
             .blockingGet();
     }
 }
