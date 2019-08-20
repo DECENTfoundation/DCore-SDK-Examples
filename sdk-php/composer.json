@@ -1,5 +1,5 @@
 {
     "require": {
-        "decentfoundation/dcorephp-sdk": "dev-master"
+        "decentfoundation/dcorephp-sdk": "^2.5"
     }
 }
