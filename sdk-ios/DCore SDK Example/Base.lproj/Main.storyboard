@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vux-Tm-2SL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXJ-m4-JXQ" userLabel="History">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
@@ -57,6 +57,13 @@
                                                 <state key="normal" title="Messaging"/>
                                                 <connections>
                                                     <segue destination="PrJ-ko-taH" kind="show" id="AYw-vx-uF3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWt-Wo-RTV">
+                                                <rect key="frame" x="0.0" y="150" width="414" height="30"/>
+                                                <state key="normal" title="Testable Screen"/>
+                                                <connections>
+                                                    <segue destination="yJI-xM-8Ud" kind="show" id="5IB-SM-1NB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -115,6 +122,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1u-uo-gTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1906" y="19"/>
+        </scene>
+        <!--Testable Screen-->
+        <scene sceneID="Ekn-J5-Mn8">
+            <objects>
+                <viewController title="Testable Screen" id="yJI-xM-8Ud" customClass="TestableViewController" customModule="DCore_SDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PT3-W3-rkZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="t06-FL-I2P">
+                                <rect key="frame" x="8" y="104" width="398" height="112.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wym-hf-57T">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.3.54" borderStyle="roundedRect" placeholder="Asset Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hX9-n1-ZpV">
+                                        <rect key="frame" x="0.0" y="46" width="398" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converted:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XV5-eO-yXI">
+                                        <rect key="frame" x="0.0" y="92" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t06-FL-I2P" firstAttribute="top" secondItem="EeN-uJ-7v8" secondAttribute="top" constant="16" id="Cfp-qO-gRF"/>
+                            <constraint firstItem="t06-FL-I2P" firstAttribute="leading" secondItem="EeN-uJ-7v8" secondAttribute="leading" constant="8" id="F1b-wK-ioa"/>
+                            <constraint firstItem="EeN-uJ-7v8" firstAttribute="trailing" secondItem="t06-FL-I2P" secondAttribute="trailing" constant="8" id="euN-6w-c0M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EeN-uJ-7v8"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountField" destination="Wym-hf-57T" id="CyG-9X-9de"/>
+                        <outlet property="assetIdField" destination="hX9-n1-ZpV" id="gnY-h0-as2"/>
+                        <outlet property="resultLabel" destination="XV5-eO-yXI" id="GSw-Yo-Msy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GhX-Cy-zUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-691" y="913"/>
         </scene>
         <!--Make Transfer-->
         <scene sceneID="RoM-05-FmR">
