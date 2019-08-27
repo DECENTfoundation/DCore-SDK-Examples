@@ -48,7 +48,7 @@
 		<dependency>
 			<groupId>com.github.DECENTfoundation</groupId>
 			<artifactId>DCoreKt-SDK</artifactId>
-			<version>2.3.1</version>
+			<version>3.0.0</version>
 		</dependency>
 
 		<!--	SPRING TEST DEPENDENCY	-->
