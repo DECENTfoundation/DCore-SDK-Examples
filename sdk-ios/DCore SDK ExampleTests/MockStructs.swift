@@ -1,6 +1,7 @@
 import DCoreKit
 import Foundation
 
+// swiftlint:disable all
 func decodeMock<T: Decodable>(json: String) -> T {
     return try! JSONDecoder.codingContext().decode(T.self, from: json.data(using: .utf8)!)
 }

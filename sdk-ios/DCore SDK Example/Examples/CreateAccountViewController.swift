@@ -7,13 +7,13 @@ final class CreateAccountViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
     @IBOutlet weak var accountName: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let createButton = UIBarButtonItem(title: "Create", style: .done, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem = createButton
-        
+
         createButton.rx.tap
             .do(onNext: {
                 assertionFailure("""

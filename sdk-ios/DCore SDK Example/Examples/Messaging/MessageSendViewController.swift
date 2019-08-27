@@ -5,7 +5,7 @@ import DCoreKit
 
 final class MessageSendViewController: UIViewController {
     private let disposeBag = DisposeBag()
-    
+
     @IBOutlet weak var receiver: UITextField!
     @IBOutlet weak var message: UITextField!
     @IBOutlet weak var encryptedSwitch: UISwitch!
@@ -24,10 +24,10 @@ final class MessageSendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let sendButton = UIBarButtonItem(title: "Send", style: .done, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem = sendButton
-        
+
         sendButton.rx.tap.do(onNext: {
             sendButton.isEnabled = false
         }).flatMapLatest { [weak self] _ -> Single<TransactionConfirmation> in

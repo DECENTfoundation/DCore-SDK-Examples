@@ -20,7 +20,8 @@ struct TestableViewModel {
 
 extension TestableViewModel {
     private func amountToRaw(amount: String) throws -> BigInt {
-        guard let amountDecimal = Decimal(string: amount), let val = BigInt((amountDecimal * pow(.ten, dctPrecision)).description)
+        guard let amountDecimal = Decimal(string: amount),
+            let val = BigInt((amountDecimal * pow(.ten, dctPrecision)).description)
         else { throw NSError(domain: "Conversion failed", code: 0) }
         return val
     }

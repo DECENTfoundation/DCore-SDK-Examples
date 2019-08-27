@@ -10,7 +10,7 @@ final class BalanceHistoryViewController: UITableViewController {
     private var numberOfRows: Int {
         return tableView.dataSource?.tableView(tableView, numberOfRowsInSection: 0) ?? 0
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,7 +45,7 @@ final class BalanceHistoryViewController: UITableViewController {
             }
         }).bind(to: tableView.rx.items(
             cellIdentifier: "historyCell", cellType: HistoryCell.self
-        )) { (row, element, cell) in
+        )) { (_, element, cell) in
             cell.operationJson.text = String(data: try! JSONEncoder.codingContext().encode(element), encoding: .utf8)
         }.disposed(by: disposeBag)
     }

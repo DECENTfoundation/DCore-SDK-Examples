@@ -10,10 +10,10 @@ final class CreateUIAViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let createButton = UIBarButtonItem(title: "Create", style: .done, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem = createButton
-        
+
         createButton.rx.tap.do(onNext: {
             createButton.isEnabled = false
         }).flatMapLatest { [weak self] _ -> Single<TransactionConfirmation> in

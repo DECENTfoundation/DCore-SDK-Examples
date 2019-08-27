@@ -18,7 +18,7 @@ class MessagesListViewController: UITableViewController {
             .asObservable()
             .bind(
                 to: tableView.rx.items(cellIdentifier: "messageCell", cellType: MessageCell.self)
-            ) { (row, element, cell) in
+            ) { (_, element, cell) in
                 cell.from.text = element.sender.description
                 cell.to.text = element.receiver.description
                 cell.message.text = element.message
@@ -37,7 +37,7 @@ final class MessagesReceivedViewController: MessagesListViewController {
         get { return "Received messages" }
         set(value) {}
     }
-    
+
     override func getMessages() -> Single<[Message]> {
         return DCore.restApi.messaging.getAllReceiverDecrypted(DCore.testCredentials)
     }
@@ -48,7 +48,7 @@ final class MessagesSentViewController: MessagesListViewController {
         get { return "Sent messages" }
         set(value) {}
     }
-    
+
     override func getMessages() -> Single<[Message]> {
         return DCore.restApi.messaging.getAllSenderDecrypted(DCore.testCredentials)
     }

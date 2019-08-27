@@ -16,7 +16,7 @@ private final class LoadingView: UILabel {
         super.init(frame: frame)
         text = "Loading..."
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         text = "Loading..."
@@ -27,7 +27,7 @@ extension UIScrollView {
     fileprivate var paginator: LoadingView? {
         return subviews.first(where: { $0 is LoadingView }) as? LoadingView
     }
-    
+
     fileprivate var originInsets: UIEdgeInsets {
         get { return objc_getAssociatedObject(self, &originInsetsHandle) as? UIEdgeInsets ?? .zero }
         set {
@@ -36,7 +36,7 @@ extension UIScrollView {
             )
         }
     }
-    
+
     fileprivate var isPaginating: Bool {
         get { return objc_getAssociatedObject(self, &isPaginatingHandle) as? Bool ?? false }
         set {
@@ -45,7 +45,7 @@ extension UIScrollView {
             )
         }
     }
-    
+
     fileprivate var isEnabledPagination: Bool {
         get { return objc_getAssociatedObject(self, &isEnabledPaginationHandle) as? Bool ?? false }
         set {
@@ -54,7 +54,7 @@ extension UIScrollView {
             )
         }
     }
-    
+
     fileprivate var hasPaginator: Bool {
         get { return objc_getAssociatedObject(self, &hasPaginatorHandle) as? Bool ?? false }
         set {
@@ -63,11 +63,11 @@ extension UIScrollView {
             )
         }
     }
-    
+
     fileprivate func isPaginationThreshold(_ point: CGPoint, threshold: CGFloat) -> Bool {
         return point.y > (contentSize.height - bounds.height + threshold)
     }
-    
+
     fileprivate var calculatedFrame: CGRect {
         let offsetX = contentSize.width / 2 - paginatorSize / 2
         let offsetY = contentSize.height + originInsets.bottom - paginatorSize / 2 + 2
@@ -86,9 +86,9 @@ extension SupportsPaginationLoading {
     func paginateControl(
         in scroll: UIScrollView, threshold: CGFloat = paginatorThreshold
         ) -> Observable<Void> {
-        
+
         scroll.isEnabledPagination = true
-        
+
         let content = scroll.rx.contentOffset.asObservable()
         let changes = Observable.zip(content, content.skip(1))
         return changes
@@ -108,18 +108,18 @@ extension SupportsPaginationLoading {
             })
             .observeOn(MainScheduler.instance)
     }
-    
+
     func isPaginating(in scroll: UIScrollView) -> Bool {
         return scroll.isPaginating
     }
-    
+
     func setPagination(in scroll: UIScrollView, enabled: Bool) {
         scroll.isEnabledPagination = enabled
         if !enabled {
             resetPagination(in: scroll)
         }
     }
-    
+
     func resetPagination(in scroll: UIScrollView) {
         if let paginator = scroll.paginator {
             paginator.removeFromSuperview()
@@ -128,12 +128,12 @@ extension SupportsPaginationLoading {
             scroll.hasPaginator = false
         }
     }
-    
+
     private func addPagination(in scroll: UIScrollView) {
         guard !scroll.hasPaginator && !scroll.isPaginating else { return }
         scroll.hasPaginator = true
         scroll.originInsets = scroll.contentInset
-        
+
         let paginator = LoadingView()
         paginator.frame = scroll.calculatedFrame
         scroll.addSubview(paginator)
