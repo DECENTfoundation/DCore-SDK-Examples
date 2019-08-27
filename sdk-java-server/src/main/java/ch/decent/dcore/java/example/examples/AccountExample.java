@@ -35,7 +35,6 @@ public class AccountExample {
         return dcoreApi
             .getAccountApi()
             .getByName(accountName)
-
             .blockingGet();
     }
 
