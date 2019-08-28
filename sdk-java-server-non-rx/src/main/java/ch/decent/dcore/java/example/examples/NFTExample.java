@@ -1,6 +1,6 @@
 package ch.decent.dcore.java.example.examples;
 
-import ch.decent.sdk.api.rx.DCoreApi;
+import ch.decent.sdk.api.blocking.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +42,7 @@ public class NFTExample {
                 MAX_SUPPLY_IS_FIXED,
                 description,
                 MyCustomNftToken.class,
-                TOKEN_IS_TRANSFERABLE)
-            .blockingGet();
+                TOKEN_IS_TRANSFERABLE);
     }
 
     /**
@@ -65,8 +64,7 @@ public class NFTExample {
                 credentials.getAccount(),
                 new MyCustomNftToken(5, false),
                 null,
-                initialFee)
-            .blockingGet();
+                initialFee);
     }
 
     /**
@@ -85,8 +83,7 @@ public class NFTExample {
             .transfer(
                 credentials,
                 receiver.getId(),
-                result.get(0).getId())
-            .blockingGet();
+                result.get(0).getId());
     }
 
     /**
@@ -98,7 +95,7 @@ public class NFTExample {
     public List<NftData<NftModel>> getNftByAccount(AccountObjectId account) {
         final DCoreApi dcoreApi = connectionExample.connect();
 
-        return dcoreApi.getNftApi().getNftBalances(account).blockingGet();
+        return dcoreApi.getNftApi().getNftBalances(account);
     }
 }
 

@@ -1,6 +1,6 @@
 package ch.decent.dcore.java.example.examples;
 
-import ch.decent.sdk.api.rx.DCoreApi;
+import ch.decent.sdk.api.blocking.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.TransactionConfirmation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +34,7 @@ public class UIAExample {
                 credentials,
                 symbol,
                 convertedPrecision,
-                someDescription)
-            .blockingGet();
+                someDescription);
     }
 
     /**
@@ -53,7 +52,6 @@ public class UIAExample {
             .issue(
                 credentials,
                 symbol,
-                amountOfAssets)
-            .blockingGet();
+                amountOfAssets);
     }
 }

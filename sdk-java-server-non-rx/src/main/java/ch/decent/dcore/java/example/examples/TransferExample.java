@@ -1,6 +1,6 @@
 package ch.decent.dcore.java.example.examples;
 
-import ch.decent.sdk.api.rx.DCoreApi;
+import ch.decent.sdk.api.blocking.DCoreApi;
 import ch.decent.sdk.DCoreConstants;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.Account;
@@ -39,7 +39,6 @@ public class TransferExample {
                 credentials,
                 receiver.getName(),
                 assetAmount,
-                someMessage)
-            .blockingGet();
+                someMessage);
     }
 }

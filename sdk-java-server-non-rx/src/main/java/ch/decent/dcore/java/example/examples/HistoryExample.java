@@ -1,6 +1,6 @@
 package ch.decent.dcore.java.example.examples;
 
-import ch.decent.sdk.api.rx.DCoreApi;
+import ch.decent.sdk.api.blocking.DCoreApi;
 import ch.decent.sdk.crypto.Credentials;
 import ch.decent.sdk.model.OperationHistory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +33,7 @@ public class HistoryExample {
 
         return dcoreApi
             .getHistoryApi()
-            .listOperationsRelative(credentials.getAccount(), start, RESULTS_PER_PAGE)
-            .blockingGet();
+            .listOperationsRelative(credentials.getAccount(), start, RESULTS_PER_PAGE);
     }
 
     /**
@@ -52,8 +51,7 @@ public class HistoryExample {
 
             final List<OperationHistory> currentPage = dcoreApi
                 .getHistoryApi()
-                .listOperationsRelative(credentials.getAccount(), result.size(), RESULTS_PER_PAGE)
-                .blockingGet();
+                .listOperationsRelative(credentials.getAccount(), result.size(), RESULTS_PER_PAGE);
 
             result.addAll(currentPage);
 
