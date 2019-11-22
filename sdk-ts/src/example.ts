@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { serialize } from "class-transformer";
-import { AssetAmount, ChainObject, Credentials, DCoreSdk, OperationHistory, TransactionConfirmation } from "dcorejs-sdk";
+import { AssetAmount, ChainObject, Credentials, OperationHistory, TransactionConfirmation } from "dcorejs-sdk";
+import { DCoreSdk } from 'dcorejs-sdk/dist/DCoreSdk';
 import { create } from "rxjs-spy";
 
 const el = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -8,7 +9,7 @@ const getInputEl = (id: string) => document.getElementById(id) as HTMLInputEleme
 
 const output = el('output');
 const creds = new Credentials(ChainObject.parse("1.2.19"), "5KfatbpE1zVdnHgFydT7Cg9hJmUVLN7vQXJkBbzGrNSND3uFmAa");
-const api = DCoreSdk.createForWebSocket(() => new WebSocket("wss://testnet-socket.dcore.io"));
+const api = DCoreSdk.createApiRx(undefined, () => new WebSocket("wss://testnet-socket.dcore.io"));
 const spy = create();
 spy.log();
 
