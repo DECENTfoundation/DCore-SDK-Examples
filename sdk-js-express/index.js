@@ -2,10 +2,10 @@ require("reflect-metadata");
 
 const WebSocket = require("ws");
 const express = require("express");
-const { DCoreSdk, Credentials, ChainObject, Address } = require("dcorejs-sdk");
+const {Credentials, ChainObject, DCoreSdk, Address} = require("dcorejs-sdk");
 
-const httpApi = DCoreSdk.createForHttp({ baseUrl: "https://testnet.dcore.io/" });
-const socketApi = DCoreSdk.createForWebSocket(() => new WebSocket("wss://testnet-socket.dcore.io/"));
+const httpApi = DCoreSdk.createApiPromise({baseUrl: "https://testnet.dcore.io/"});
+const socketApi = DCoreSdk.createApiPromise(undefined, () => new WebSocket("wss://testnet-socket.dcore.io/"));
 const registrar = new Credentials(ChainObject.parse("1.2.27"), "5Hxwqx6JJUBYWjQNt8DomTNJ6r6YK8wDJym4CMAH1zGctFyQtzt");
 
 const app = express();

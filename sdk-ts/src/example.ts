@@ -1,7 +1,6 @@
 import "reflect-metadata";
 import { serialize } from "class-transformer";
-import { AssetAmount, ChainObject, Credentials, OperationHistory, TransactionConfirmation } from "dcorejs-sdk";
-import { DCoreSdk } from 'dcorejs-sdk/dist/DCoreSdk';
+import { AssetAmount, ChainObject, Credentials, DCoreSdk, OperationHistory, TransactionConfirmation } from "dcorejs-sdk";
 import { create } from "rxjs-spy";
 
 const el = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
