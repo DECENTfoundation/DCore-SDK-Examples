@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "class-transformer": "^0.2.0",
-    "dcorejs-sdk": "^3.0.1",
+    "dcorejs-sdk": "^3.0.2",
     "rxjs": "^6.5.3"
   }
 }
